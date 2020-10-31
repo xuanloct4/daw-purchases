@@ -1,0 +1,10 @@
+*~
+.DS_Store
+contents.xcworkspacedata
+UserInterfaceState.xcuserstate
+xcschememanagement.plist
+tts.xcscheme
+WorkspaceSettings.xcsettings
+ami-ios-base-customer.xcworkspace/xcuserdata/
+Pods/
+Pods/Pods.xcodeproj/xcuserdata/*

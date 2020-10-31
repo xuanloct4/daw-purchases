@@ -1,13 +1,13 @@
 //
-//  TweetDetailAction.swift
-//  Redux-Twitter
+//  DetailAction.swift
+//  daw-purchases
 //
-//  Created by Göktuğ Gümüş on 1.04.2018.
-//  Copyright © 2018 Goktug Gumus. All rights reserved.
+//  Created by Tran Loc on 10/27/20.
+//  Copyright © 2020 Tran Loc. All rights reserved.
 //
 
 import ReSwift
 
 struct DetailAction: Action {
-  let user: User?
+  let product: Product?
 }

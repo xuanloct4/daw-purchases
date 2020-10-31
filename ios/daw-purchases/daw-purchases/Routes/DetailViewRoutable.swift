@@ -1,14 +1,14 @@
 //
-//  TweetDetailViewRoutable.swift
-//  Redux-Twitter
+//  DetailViewRoutable.swift
+//  daw-purchases
 //
-//  Created by Göktuğ Gümüş on 31.03.2018.
-//  Copyright © 2018 Goktug Gumus. All rights reserved.
+//  Created by Tran Loc on 10/27/20.
+//  Copyright © 2020 Tran Loc. All rights reserved.
 //
 
 import ReSwiftRouter
 
-class TweetDetailViewRoutable: Routable {
+class DetailViewRoutable: Routable {
   public func popRouteSegment(
     _ routeElementIdentifier: RouteElementIdentifier,
     animated: Bool,

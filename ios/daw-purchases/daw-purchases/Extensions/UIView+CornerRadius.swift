@@ -1,9 +1,9 @@
 //
-//  UIView+CornerRadius.swift
-//  Redux-Twitter
+//  UIView.swift
+//  daw-purchases
 //
-//  Created by Göktuğ Gümüş on 25.03.2018.
-//  Copyright © 2018 Goktug Gumus. All rights reserved.
+//  Created by Tran Loc on 10/27/20.
+//  Copyright © 2020 Tran Loc. All rights reserved.
 //
 
 import UIKit

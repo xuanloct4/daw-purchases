@@ -1,14 +1,14 @@
 //
-//  TweetDetailState.swift
-//  Redux-Twitter
+//  DetailState.swift
+//  daw-purchases
 //
-//  Created by Göktuğ Gümüş on 1.04.2018.
-//  Copyright © 2018 Goktug Gumus. All rights reserved.
+//  Created by Tran Loc on 10/27/20.
+//  Copyright © 2020 Tran Loc. All rights reserved.
 //
 
 import Foundation
 import ReSwift
 
 struct DetailState: StateType {
-  var user: User?
+  var product: Product?
 }

@@ -1,9 +1,9 @@
 //
 //  SearchViewController.swift
-//  Redux-Twitter
+//  daw-purchases
 //
-//  Created by Göktuğ Gümüş on 25.03.2018.
-//  Copyright © 2018 Goktug Gumus. All rights reserved.
+//  Created by Tran Loc on 10/27/20.
+//  Copyright © 2020 Tran Loc. All rights reserved.
 //
 
 import UIKit
@@ -12,11 +12,11 @@ import ReSwiftRouter
 import RxCocoa
 import RxSwift
 import Result
-import PullToRefreshKit
 import ReRxSwift
 
 class SearchViewController: UIViewController, Routable {
-  
+  let notFoundMessage = "User with username of '%s' was not found"
+    
   let connection = Connection(store: store,
                               mapStateToProps: mapStateToProps,
                               mapDispatchToActions: mapDispatchToActions)
@@ -24,33 +24,34 @@ class SearchViewController: UIViewController, Routable {
   let disposeBag = DisposeBag()
   
   @IBOutlet weak var searchBar: UISearchBar!
-  @IBOutlet weak var tweetsCollectionView: UICollectionView!
+  @IBOutlet weak var collectionView: UICollectionView!
   
-  private var results: [User] = []
+  private var results: [Product] = []
   private var didChangeQuery: PublishSubject = PublishSubject<Void>()
-  private var didChangeMaxId: PublishSubject = PublishSubject<Void>()
+  private var didChangeLimit: PublishSubject = PublishSubject<Void>()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     configureCollectionView()
-    configurePullToRefresh()
     
-    // When query or maxId changes, it is gonna reload data only once
-    // this mechanism prevents reloading twice
-    Observable.combineLatest(didChangeQuery, didChangeMaxId)
-      .subscribe(onNext: { [weak self] _ in
-        self?.updateData()
-      })
-      .disposed(by: disposeBag)
+//    Observable.combineLatest(didChangeQuery, didChangeLimit)
+//      .subscribe(onNext: { [weak self] _ in
+//        self?.updateData()
+//      })
+//      .disposed(by: disposeBag)
     
-    connection.subscribe(\Props.query) { [weak self] query in
+    didChangeQuery.subscribe(onNext: {[weak self] _ in
+                self?.updateData()
+        }).disposed(by: disposeBag)
+    
+    connection.subscribe(\Props.username) { [weak self] query in
       self?.didChangeQuery.onNext(())
     }
     
-    connection.subscribe(\Props.maxId) { [weak self] maxId in
+    connection.subscribe(\Props.limit) { [weak self] limit in
       // do nil check for preventing in order to reloading twice
-      if maxId != nil {
-        self?.didChangeMaxId.onNext(())
+      if limit != nil {
+        self?.didChangeLimit.onNext(())
       }
     }
     
@@ -61,19 +62,21 @@ class SearchViewController: UIViewController, Routable {
       .distinctUntilChanged()
       .subscribe(onNext: { [weak self] text in
         if text != "" {
-          self?.actions.searchTweets(text)
+          self?.actions.search(text)
+            self?.collectionView.setEmptyMessage(String(format: "User with username of '%@' was not found", text) )
         } else {
           self?.actions.resetSearch()
+            self?.collectionView.setEmptyMessage("")
         }
       })
       .disposed(by: disposeBag)
   }
   
   private func updateData() {
-    if let results = store.state.searchState.results {
+    if let results = store.state.searchState.productResults {
       switch results {
-      case let .success(tweets):
-        self.results = tweets
+      case let .success(product):
+        self.results = product
         break
       case let .failure(APIError.somethingWentWrong(error)):
         print("Error: \(error)")
@@ -81,18 +84,21 @@ class SearchViewController: UIViewController, Routable {
         break
       }
       
-      self.tweetsCollectionView.reloadData()
+      self.collectionView.reloadData()
     } else {
       // Reset
       self.results.removeAll()
-      self.tweetsCollectionView.reloadData()
+      self.collectionView.reloadData()
     }
-    
-    self.tweetsCollectionView.switchRefreshFooter(to: .normal)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    store.subscribe(self) {
+      $0.select {
+        $0.searchState
+      }
+    }
     
     connection.connect()
   }
@@ -110,11 +116,12 @@ class SearchViewController: UIViewController, Routable {
     super.viewWillDisappear(animated)
     
     connection.disconnect()
+    store.unsubscribe(self)
   }
   
   private func configureCollectionView() {
-    tweetsCollectionView.register(R.nib.tweetCell(), forCellWithReuseIdentifier: R.reuseIdentifier.tweetCell.identifier)
-    if let flowLayout = tweetsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+    collectionView.register(R.nib.productCell(), forCellWithReuseIdentifier: R.reuseIdentifier.productCell.identifier)
+    if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
       if #available(iOS 10.0, *) {
         flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
       }
@@ -123,30 +130,17 @@ class SearchViewController: UIViewController, Routable {
       }
       
     }
-    tweetsCollectionView.delegate = self
-    tweetsCollectionView.dataSource = self
-  }
-  
-  private func configurePullToRefresh() {
-    let footer = DefaultRefreshFooter.footer()
-    
-    tweetsCollectionView.configRefreshFooter(with: footer, container: [] as AnyObject, action: { [weak self] in
-      self?.loadMore()
-    })
-  }
-  
-  private func loadMore() {
-    tweetsCollectionView.switchRefreshFooter(to: .refreshing)
-    store.dispatch(SearchState.loadMoreTweets())
+    collectionView.delegate = self
+    collectionView.dataSource = self
   }
 }
 
 extension SearchViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let tweet = results[indexPath.item]
+    let product = results[indexPath.item]
     
-    actions.setTweetDetail(tweet)
-    actions.setRoute([RouteNames.search, RouteNames.tweetDetail])
+    actions.setDetail(product)
+    actions.setRoute([RouteNames.search, RouteNames.detail])
   }
 }
 
@@ -156,11 +150,11 @@ extension SearchViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    if let tweetCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.tweetCell.identifier, for: indexPath) as? TweetCell {
+    if let productCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.productCell.identifier, for: indexPath) as? ProductCell {
       
-      tweetCell.model = results[indexPath.row]
+      productCell.model = results[indexPath.row]
       
-      return tweetCell
+      return productCell
     }
     
     return UICollectionViewCell()
@@ -173,33 +167,57 @@ extension SearchViewController: UICollectionViewDataSource {
   }
 }
 
+
+extension SearchViewController: StoreSubscriber {
+  func newState(state: SearchState) {
+//    if let result = state.purchaseResults {
+//            switch result {
+//            case let .success(purchases):
+//                if (purchases.count > 0) {
+//                    actions.listUserPurchaseProduct(purchases)
+//                }
+//              break
+//            case .failure(_):
+//              break
+//            }
+//    }
+//
+    if let r = state.productResult {
+              updateData()
+       }
+
+  }
+}
+
 extension SearchViewController: Connectable {
   struct Props {
-    let query: String?
-    let maxId: String?
+    let username: String?
+    let limit: Int?
   }
   struct Actions {
-    let searchTweets: (_ query: String) -> ()
-    let loadMoreTweets: () -> ()
+    let search: (_ query: String) -> ()
+    let listUserPurchaseProduct: (_ username: String, _ purchases: [Purchase]) -> ()
+    let loadMore: () -> ()
     let resetSearch: () -> ()
-    let setTweetDetail: (_ tweet: User) -> ()
+    let setDetail: (_ product: Product) -> ()
     let setRoute: (Route) -> ()
   }
 }
 
 private let mapStateToProps = { (appState: AppState) in
   return SearchViewController.Props(
-    query: appState.searchState.query,
-    maxId: appState.searchState.maxId
+    username: appState.searchState.username,
+    limit: appState.searchState.limit
   )
 }
 
 private let mapDispatchToActions = { (dispatch: @escaping DispatchFunction) in
   return SearchViewController.Actions(
-    searchTweets: { newQuery in dispatch(SearchState.searchTweets(query: newQuery)) },
-    loadMoreTweets: { dispatch(SearchState.loadMoreTweets()) },
+    search: { newQuery in dispatch(SearchState.searchUsersPurchaseProduct(username: newQuery, limit: 5)) },
+    listUserPurchaseProduct: { username, purchases in dispatch(SearchState.listUserPurchaseProduct(username: username, purchases: purchases))},
+    loadMore: { dispatch(SearchState.loadMorePurchases()) },
     resetSearch: { dispatch(ResetSearchAction()) },
-    setTweetDetail: { tweet in dispatch(DetailAction(user: tweet)) },
+    setDetail: { product in dispatch(DetailAction(product: product)) },
     setRoute: { route in dispatch(ReSwiftRouter.SetRouteAction(route)) }
   )
 }

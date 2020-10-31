@@ -1,9 +1,9 @@
 //
 //  SearchReducer.swift
-//  Redux-Twitter
+//  daw-purchases
 //
-//  Created by Göktuğ Gümüş on 31.03.2018.
-//  Copyright © 2018 Goktug Gumus. All rights reserved.
+//  Created by Tran Loc on 10/27/20.
+//  Copyright © 2020 Tran Loc. All rights reserved.
 //
 
 import ReSwift
@@ -13,30 +13,45 @@ func searchReducer(action: Action, state: SearchState?) -> SearchState {
   var state = state ?? SearchState()
   
   switch action {
-  case let action as SearchTweetsAction:
-    state.results = action.results
-    state.maxId = action.maxId
-    state.query = action.query
-  case let action as LoadMoreTweetsAction:
-    state.maxId = action.maxId
+//  case let action as SearchUsersAction:
+////    state.results = action.results
+//    state.limit = action.limit
+//    state.username = action.username
+//  case let action as LoadMorePurchasesAction:
+//    state.limit = action.limit
+//
+//    switch action.results {
+//    case let .success(tweets):
+//      if var currentTweets = state.results!.value {
+//        currentTweets.append(contentsOf: tweets)
+//
+//        state.results = .success(currentTweets)
+//      }
+//      break
+//    case .failure(_):
+//      state.results = action.results
+//      break
+//    }
+//    break
     
-    switch action.results {
-    case let .success(tweets):
-      if var currentTweets = state.results!.value {
-        currentTweets.append(contentsOf: tweets)
-        
-        state.results = .success(currentTweets)
-      }
-      break
-    case .failure(_):
-      state.results = action.results
-      break
-    }
+    case let action as SearchPurchasesByUserAction:
+    state.username = action.username
+    state.purchaseResults = action.results
+    break
+  case let action as SearchUserPurchaseProductAction:
+    state.username = action.username
+    state.productResults = action.results
+    break
+    
+   
+    
+  case let action as GetProductInfoAction:
+    state.productResult = action.results
     break
   case _ as ResetSearchAction:
-    state.query = nil
-    state.results = nil
-    state.maxId = nil
+    state.username = nil
+    state.productResults = nil
+    state.limit = nil
   default:
     break
   }

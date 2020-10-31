@@ -1,9 +1,9 @@
 //
 //  SearchViewRoutable.swift
-//  Redux-Twitter
+//  daw-purchases
 //
-//  Created by Göktuğ Gümüş on 31.03.2018.
-//  Copyright © 2018 Goktug Gumus. All rights reserved.
+//  Created by Tran Loc on 10/27/20.
+//  Copyright © 2020 Tran Loc. All rights reserved.
 //
 
 import ReSwiftRouter
@@ -21,12 +21,12 @@ class SearchViewRoutable: Routable {
     animated: Bool,
     completionHandler: @escaping RoutingCompletionHandler) -> Routable {
     
-    if routeElementIdentifier == RouteNames.tweetDetail {
-      let tweetDetailController = R.storyboard.tweetDetail.instantiateInitialViewController()!
+    if routeElementIdentifier == RouteNames.detail {
+      let detailController = R.storyboard.detail.instantiateInitialViewController()!
       
-      (viewController as! UINavigationController).pushViewController(tweetDetailController, animated: animated)
+      (viewController as! UINavigationController).pushViewController(detailController, animated: animated)
       
-      return TweetDetailViewRoutable()
+      return DetailViewRoutable()
     }
     
     fatalError("Cannot handle this route change!")
@@ -37,7 +37,7 @@ class SearchViewRoutable: Routable {
     animated: Bool,
     completionHandler: @escaping RoutingCompletionHandler) {
     
-    store.dispatch(DetailAction(user: nil))
+    store.dispatch(DetailAction(product: nil))
   }
   
   public func changeRouteSegment(

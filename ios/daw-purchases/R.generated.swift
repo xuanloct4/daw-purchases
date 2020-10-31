@@ -93,15 +93,15 @@ struct R: Rswift.Validatable {
   struct segue {
     /// This struct is generated for `SearchViewController`, and contains static references to 1 segues.
     struct searchViewController {
-      /// Segue identifier `showTweetDetail`.
-      static let showTweetDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SearchViewController, TweetDetailViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showTweetDetail")
+      /// Segue identifier `showDetail`.
+      static let showDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SearchViewController, DetailViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showDetail")
 
       #if os(iOS) || os(tvOS)
-      /// Optionally returns a typed version of segue `showTweetDetail`.
+      /// Optionally returns a typed version of segue `showDetail`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showTweetDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SearchViewController, TweetDetailViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.searchViewController.showTweetDetail, segue: segue)
+      static func showDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SearchViewController, DetailViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.searchViewController.showDetail, segue: segue)
       }
       #endif
 
@@ -130,30 +130,28 @@ struct R: Rswift.Validatable {
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
+    /// Storyboard `Detail`.
+    static let detail = _R.storyboard.detail()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
     /// Storyboard `Search`.
     static let search = _R.storyboard.search()
     /// Storyboard `Splash`.
     static let splash = _R.storyboard.splash()
-    /// Storyboard `TweetDetail`.
-    static let tweetDetail = _R.storyboard.tweetDetail()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Detail", bundle: ...)`
+    static func detail(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.detail)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
     }
     #endif
 
@@ -171,63 +169,25 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "TweetDetail", bundle: ...)`
-    static func tweetDetail(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.tweetDetail)
-    }
-    #endif
-
     fileprivate init() {}
   }
   #endif
 
-  /// This `R.info` struct is generated, and contains static references to 1 properties.
-  struct info {
-    struct uiApplicationSceneManifest {
-      static let _key = "UIApplicationSceneManifest"
-      static let uiApplicationSupportsMultipleScenes = false
-
-      struct uiSceneConfigurations {
-        static let _key = "UISceneConfigurations"
-
-        struct uiWindowSceneSessionRoleApplication {
-          struct defaultConfiguration {
-            static let _key = "Default Configuration"
-            static let uiSceneConfigurationName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneConfigurationName") ?? "Default Configuration"
-            static let uiSceneDelegateClassName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneDelegateClassName") ?? "$(PRODUCT_MODULE_NAME).SceneDelegate"
-            static let uiSceneStoryboardFile = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneStoryboardFile") ?? "Main"
-
-            fileprivate init() {}
-          }
-
-          fileprivate init() {}
-        }
-
-        fileprivate init() {}
-      }
-
-      fileprivate init() {}
-    }
-
-    fileprivate init() {}
-  }
-
   /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
-    /// Nib `TweetCell`.
-    static let tweetCell = _R.nib._TweetCell()
+    /// Nib `ProductCell`.
+    static let productCell = _R.nib._ProductCell()
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "TweetCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.tweetCell) instead")
-    static func tweetCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.tweetCell)
+    /// `UINib(name: "ProductCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.productCell) instead")
+    static func productCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.productCell)
     }
     #endif
 
-    static func tweetCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TweetCell? {
-      return R.nib.tweetCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TweetCell
+    static func productCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProductCell? {
+      return R.nib.productCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProductCell
     }
 
     fileprivate init() {}
@@ -235,8 +195,8 @@ struct R: Rswift.Validatable {
 
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
-    /// Reuse identifier `TweetCell`.
-    static let tweetCell: Rswift.ReuseIdentifier<TweetCell> = Rswift.ReuseIdentifier(identifier: "TweetCell")
+    /// Reuse identifier `ProductCell`.
+    static let productCell: Rswift.ReuseIdentifier<ProductCell> = Rswift.ReuseIdentifier(identifier: "ProductCell")
 
     fileprivate init() {}
   }
@@ -257,34 +217,21 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
-    try nib.validate()
-    #endif
-    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib: Rswift.Validatable {
-    static func validate() throws {
-      try _TweetCell.validate()
-    }
-
-    struct _TweetCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
-      typealias ReusableType = TweetCell
+  struct nib {
+    struct _ProductCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ProductCell
 
       let bundle = R.hostingBundle
-      let identifier = "TweetCell"
-      let name = "TweetCell"
+      let identifier = "ProductCell"
+      let name = "ProductCell"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TweetCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TweetCell
-      }
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "default_thumbnail", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'default_thumbnail' is used in nib 'TweetCell', but couldn't be loaded.") }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProductCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProductCell
       }
 
       fileprivate init() {}
@@ -298,10 +245,10 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
-      try launchScreen.validate()
+      try detail.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try main.validate()
+      try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
       try search.validate()
@@ -309,17 +256,14 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try splash.validate()
       #endif
-      #if os(iOS) || os(tvOS)
-      try tweetDetail.validate()
-      #endif
     }
 
     #if os(iOS) || os(tvOS)
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UIViewController
+    struct detail: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = DetailViewController
 
       let bundle = R.hostingBundle
-      let name = "LaunchScreen"
+      let name = "Detail"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
@@ -331,11 +275,11 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
+    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UIViewController
 
       let bundle = R.hostingBundle
-      let name = "Main"
+      let name = "LaunchScreen"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
@@ -370,23 +314,6 @@ struct _R: Rswift.Validatable {
       let name = "Splash"
 
       static func validate() throws {
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct tweetDetail: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = TweetDetailViewController
-
-      let bundle = R.hostingBundle
-      let name = "TweetDetail"
-
-      static func validate() throws {
-        if UIKit.UIImage(named: "default_thumbnail", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'default_thumbnail' is used in storyboard 'TweetDetail', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

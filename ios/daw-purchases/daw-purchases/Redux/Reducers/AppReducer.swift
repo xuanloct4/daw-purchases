@@ -1,9 +1,9 @@
 //
 //  AppReducer.swift
-//  Redux-Twitter
+//  daw-purchases
 //
-//  Created by Göktuğ Gümüş on 31.03.2018.
-//  Copyright © 2018 Goktug Gumus. All rights reserved.
+//  Created by Tran Loc on 10/27/20.
+//  Copyright © 2020 Tran Loc. All rights reserved.
 //
 
 import ReSwift
@@ -13,6 +13,6 @@ func appReducer(action: Action, state: AppState?) -> AppState {
   return AppState(
     navigationState: NavigationReducer.handleAction(action, state: state?.navigationState),
     searchState: searchReducer(action: action, state: state?.searchState),
-    tweetDetail: tweetDetailReducer(action: action, state: state?.tweetDetail)
+    detailState: detailReducer(action: action, state: state?.detailState)
   )
 }
