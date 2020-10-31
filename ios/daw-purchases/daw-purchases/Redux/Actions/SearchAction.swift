@@ -16,7 +16,7 @@ extension SearchState {
     public static func searchUsersPurchaseProduct(username: String, limit:Int?) -> SearchUserPurchaseProduct {
         NetworkService.rxRequestCallback(api: .getPurchasesByUser(username: username, limit: limit), onSuccess: { (purchases: Purchases?) in
             
-            listUserPurchaseProduct(username: username, purchases: purchases?.purchases ?? [])
+            _ = listUserPurchaseProduct(username: username, purchases: purchases?.purchases ?? [])
         }, onError: { error in
             store.dispatch(SearchUserPurchaseProductAction(username: username, results: .failure(.somethingWentWrong(error.localizedDescription))))
         })

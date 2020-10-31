@@ -28,7 +28,6 @@ struct SearchState: StateType, Encodable {
     
     private enum CodingKeys: String, CodingKey {
         case username
-        case results
         case limit
     }
 }

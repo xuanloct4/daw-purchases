@@ -16,12 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-        let _date = dateFormatter.date(from: "2020-10-29T23:20:44.365Z")
-        let d = _date
-        
+  
         // Set a dummy view controller to satisfy UIKit
         window?.rootViewController = UIViewController()
         

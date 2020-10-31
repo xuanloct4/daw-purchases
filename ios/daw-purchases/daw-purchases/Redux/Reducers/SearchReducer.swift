@@ -38,6 +38,9 @@ func searchReducer(action: Action, state: SearchState?) -> SearchState {
     state.username = action.username
     state.productResults = action.results
     break
+  case _ as ResetSearchAction:
+    state.username = nil
+    state.productResults = nil
   default:
     break
   }

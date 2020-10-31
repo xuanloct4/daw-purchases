@@ -8,20 +8,14 @@ def shared_pods
   # Networking
   pod 'Moya/RxSwift', '~> 11.0'
 
-  # Data
-  pod 'Kingfisher'
+  # Data'
   pod 'ObjectMapper'
-  
-  # Crypto
-  pod 'CryptoSwift'
 
   # Utility
   pod 'R.swift'
 
   # UI Helper
-  pod 'SnapKit'
   pod 'IQKeyboardManagerSwift'
-  pod 'PullToRefreshKit'
   
   # Redux
   pod 'ReSwift'

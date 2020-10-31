@@ -16,7 +16,7 @@ import ReRxSwift
 
 class SearchViewController: UIViewController, Routable {
     let notFoundMessage = "User with username of '%s' was not found"
-    
+    let limit = 5
     let connection = Connection(store: store,
                                 mapStateToProps: mapStateToProps,
                                 mapDispatchToActions: mapDispatchToActions)
@@ -33,12 +33,6 @@ class SearchViewController: UIViewController, Routable {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        
-        //    Observable.combineLatest(didChangeQuery, didChangeLimit)
-        //      .subscribe(onNext: { [weak self] _ in
-        //        self?.updateData()
-        //      })
-        //      .disposed(by: disposeBag)
         
         didChangeQuery.subscribe(onNext: {[weak self] _ in
             self?.updateData()
@@ -62,11 +56,9 @@ class SearchViewController: UIViewController, Routable {
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] text in
                 if text != "" {
-                    self?.actions.search(text)
-                    self?.collectionView.setEmptyMessage(String(format: "User with username of '%@' was not found", text) )
+                    self?.actions.search(text, self?.limit)
                 } else {
                     self?.actions.resetSearch()
-                    self?.collectionView.setEmptyMessage("")
                 }
             })
             .disposed(by: disposeBag)
@@ -138,6 +130,13 @@ extension SearchViewController: UICollectionViewDelegate {
 
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let searchText = searchBar.text ?? ""
+        if(!searchText.isEmpty && results.count == 0) {
+            self.collectionView.setEmptyMessage(String(format: "User with username of '%@' was not found", searchText) )
+        } else {
+            self.collectionView.setEmptyMessage("")
+        }
+        
         return results.count
     }
     
@@ -165,7 +164,7 @@ extension SearchViewController: Connectable {
         let limit: Int?
     }
     struct Actions {
-        let search: (_ query: String) -> ()
+        let search: (_ query: String, _ limit: Int?) -> ()
         let listUserPurchaseProduct: (_ username: String, _ purchases: [Purchase]) -> ()
         let resetSearch: () -> ()
         let setDetail: (_ product: Product) -> ()
@@ -182,7 +181,7 @@ private let mapStateToProps = { (appState: AppState) in
 
 private let mapDispatchToActions = { (dispatch: @escaping DispatchFunction) in
     return SearchViewController.Actions(
-        search: { newQuery in dispatch(SearchState.searchUsersPurchaseProduct(username: newQuery, limit: 5)) },
+        search: { newQuery, limit in dispatch(SearchState.searchUsersPurchaseProduct(username: newQuery, limit: limit)) },
         listUserPurchaseProduct: { username, purchases in dispatch(SearchState.listUserPurchaseProduct(username: username, purchases: purchases))},
         resetSearch: { dispatch(ResetSearchAction()) },
         setDetail: { product in dispatch(DetailAction(product: product)) },

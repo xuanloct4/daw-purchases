@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class ProductCell: UICollectionViewCell {
     
@@ -27,7 +26,7 @@ class ProductCell: UICollectionViewCell {
                 sizeLabel.text = "Size: \(String(describing: model.product?.size ?? 0))"
                 
                 let recent = model.product?.recent ?? []
-                usersLabel.text = "Also purchased by:\n\(recent.unique().joined(separator: ", "))"
+                usersLabel.text = "Purchased by:\n\(recent.unique().joined(separator: ", "))"
                 userHeightConstraint.constant = usersLabel.actualHeight
                 layoutIfNeeded()
             }
