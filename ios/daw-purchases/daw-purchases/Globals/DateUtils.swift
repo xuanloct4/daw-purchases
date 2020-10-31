@@ -10,7 +10,7 @@ import UIKit
 
 public class DateUtils: NSObject {
     public static let locale = "vi-VN"
-   public static let dateFormatter = "yyyy-MM-dd HH:mm:ss.fff"
+    public static let dateFormatter = "yyyy-MM-dd'T'HH:mm:ss.fff'Z'"
     public static func dateFrom(string text:String, dateFormat: String = dateFormatter, timeZone: TimeZone? = nil, calendar: Calendar = Calendar(identifier: .gregorian), locale: Locale = Locale(identifier: locale)) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat

@@ -19,7 +19,6 @@ struct SearchState: StateType, Encodable {
     var purchaseResults: Result<[Purchase], APIError>?
     var productResults: Result<[Product], APIError>?
     var limit: Int?
-    var productResult: Result<Product?, APIError>?
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)

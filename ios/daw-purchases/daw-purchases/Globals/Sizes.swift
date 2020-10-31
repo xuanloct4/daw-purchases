@@ -9,5 +9,5 @@
 import UIKit
 
 struct Sizes {
-  static let screenWidth = UIScreen.main.bounds.width
+    static let screenWidth = UIScreen.main.bounds.width
 }

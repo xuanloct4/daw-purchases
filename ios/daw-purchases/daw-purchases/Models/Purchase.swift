@@ -16,11 +16,7 @@ class Purchase: Mappable, Codable {
     var date: Date!
     
     var readableCreatedAt: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.locale = Locale.init(identifier: "vi_VN")
-        
-        return dateFormatter.string(from: date)
+        return DateUtils.dateString(date: date, dateFormat: DateUtils.dateFormatter)
     }
     
     required init?(map: Map) {
@@ -31,21 +27,9 @@ class Purchase: Mappable, Codable {
         id <- map["id"]
         productId <- map["productId"]
         username <- map["username"]
-        //    date <- (map["date"], CustomDateFormatTransform(formatString: "yyyy-MM-dd'T'HH:mm:ss'Z'"))
-        
-        
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.fff'Z'"
-        
-        if let dateString = map["date"].currentValue as? String {
-            let _date = dateFormatter.date(from: dateString)
+        if let dateString = map["date"].currentValue as? String, let _date = DateUtils.dateFrom(string:dateString) {
             date = _date
         }
-        
-        //    if let dateString = map["date"].currentValue as? String, let _date = DateUtils.dateFrom(string:dateString) {
-        //           date = _date
-        //       }
     }
 }
 
@@ -53,12 +37,9 @@ class Purchase: Mappable, Codable {
 class Purchases: Mappable, Codable {
     var purchases: [Purchase]!
     required init?(map: Map) {
-        
     }
     
     func mapping(map: Map) {
         purchases <- map["purchases"]
     }
-    
-    
 }

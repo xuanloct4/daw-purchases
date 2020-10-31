@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
     /// This struct is generated for `SearchViewController`, and contains static references to 1 segues.
     struct searchViewController {
@@ -108,29 +108,12 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This struct is generated for `SplashViewController`, and contains static references to 1 segues.
-    struct splashViewController {
-      /// Segue identifier `showSearch`.
-      static let showSearch: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, SplashViewController, UIKit.UINavigationController> = Rswift.StoryboardSegueIdentifier(identifier: "showSearch")
-
-      #if os(iOS) || os(tvOS)
-      /// Optionally returns a typed version of segue `showSearch`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showSearch(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SplashViewController, UIKit.UINavigationController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.splashViewController.showSearch, segue: segue)
-      }
-      #endif
-
-      fileprivate init() {}
-    }
-
     fileprivate init() {}
   }
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `Detail`.
     static let detail = _R.storyboard.detail()
@@ -138,8 +121,6 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Search`.
     static let search = _R.storyboard.search()
-    /// Storyboard `Splash`.
-    static let splash = _R.storyboard.splash()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Detail", bundle: ...)`
@@ -159,13 +140,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Search", bundle: ...)`
     static func search(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.search)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Splash", bundle: ...)`
-    static func splash(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.splash)
     }
     #endif
 
@@ -253,9 +227,6 @@ struct _R: Rswift.Validatable {
       #if os(iOS) || os(tvOS)
       try search.validate()
       #endif
-      #if os(iOS) || os(tvOS)
-      try splash.validate()
-      #endif
     }
 
     #if os(iOS) || os(tvOS)
@@ -296,22 +267,6 @@ struct _R: Rswift.Validatable {
 
       let bundle = R.hostingBundle
       let name = "Search"
-
-      static func validate() throws {
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct splash: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = SplashViewController
-
-      let bundle = R.hostingBundle
-      let name = "Splash"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {

@@ -38,6 +38,6 @@ class Product: Mappable, Codable {
     
     func mapping(map: Map) {
         product <- map["product"]
-       
+        
     }
 }

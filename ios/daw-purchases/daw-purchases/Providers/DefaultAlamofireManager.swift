@@ -15,14 +15,13 @@ class DefaultAlamofireManager: Alamofire.SessionManager {
         configuration.timeoutIntervalForResource = 30
         configuration.requestCachePolicy = .useProtocolCachePolicy
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "ami-channel-gateway-dev.public.ascendmoney-dev.internal": .disableEvaluation
+            "daw-dev.internal": .disableEvaluation
         ]
         
         let sm = DefaultAlamofireManager(configuration: configuration, delegate: SessionDelegate(), serverTrustPolicyManager: ServerTrustPolicyManager.init(policies: serverTrustPolicies))
         sm.delegate.sessionDidReceiveChallenge = { session, challenge in
             var disposition: URLSession.AuthChallengeDisposition = .performDefaultHandling
             var credential: URLCredential?
-            
             print("received challenge")
             
             if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {

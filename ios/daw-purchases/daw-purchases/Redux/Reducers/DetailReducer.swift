@@ -9,14 +9,14 @@
 import ReSwift
 
 func detailReducer(action: Action, state: DetailState?) -> DetailState {
-  var state = state ?? DetailState()
-  
-  switch action {
-  case let action as DetailAction:
-    state.product = action.product
-  default:
-    break
-  }
-  
-  return state
+    var state = state ?? DetailState()
+    
+    switch action {
+    case let action as DetailAction:
+        state.product = action.product
+    default:
+        break
+    }
+    
+    return state
 }

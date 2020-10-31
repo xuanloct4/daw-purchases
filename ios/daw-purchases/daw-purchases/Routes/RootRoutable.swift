@@ -14,13 +14,7 @@ class RootRoutable: Routable {
   init(window: UIWindow) {
     self.window = window
   }
-  
-  func setToSplashViewController() -> Routable {
-    self.window.rootViewController = R.storyboard.splash.instantiateInitialViewController()
-    
-    return SplashViewRoutable()
-  }
-  
+
   func setToSearchViewController() -> Routable {
     self.window.rootViewController = R.storyboard.search.instantiateInitialViewController()
     
@@ -37,9 +31,6 @@ class RootRoutable: Routable {
     if to == RouteNames.search {
       completionHandler()
       return setToSearchViewController()
-    } else if to == RouteNames.splash {
-      completionHandler()
-      return setToSplashViewController()
     } else {
       fatalError("Route not supported!")
     }
@@ -54,9 +45,6 @@ class RootRoutable: Routable {
     if routeElementIdentifier == RouteNames.search {
       completionHandler()
       return setToSearchViewController()
-    } else if routeElementIdentifier == RouteNames.splash {
-      completionHandler()
-      return setToSplashViewController()
     } else {
       fatalError("Route not supported!")
     }

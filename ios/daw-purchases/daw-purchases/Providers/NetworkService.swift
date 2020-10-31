@@ -12,40 +12,23 @@ import RxSwift
 import ObjectMapper
 
 class NetworkService: NSObject {
-    public static func rxRequestCallback<T: Mappable>(api: DAWProvider, onSuccess: ((T?)->())? = nil, onError: ((Error)->())? = nil, onCompleted: (()->())? = nil, showLoader: Bool = false) {
-        if showLoader {
-            //               BaseService.showLoader()
-        }
+    public static func rxRequestCallback<T: Mappable>(api: DAWProvider, onSuccess: ((T?)->())? = nil, onError: ((Error)->())? = nil, onCompleted: (()->())? = nil) {
         let observable: Observable<T?>  = NetworkService.rxRequest(api: api)
         observable.subscribe(onNext: { data in
             onSuccess?(data)
-            if showLoader {
-                //                   BaseService.hideLoader()
-            }
         }, onError: { error in
             onError?(error)
-            if showLoader {
-                //                   BaseService.hideLoader()
-            }
-        }, onCompleted: onCompleted, onDisposed: nil)
+        }, onCompleted: onCompleted, onDisposed: nil).disposed(by: SearchState.disposeBag)
     }
     
     
-    public static func rxRequestCallback<T: Mappable, P: TargetType>(moyaProvider: MoyaProvider<P>, api: P, onSuccess: ((T?)->())? = nil, onError: ((Error)->())? = nil, onCompleted: (()->())? = nil, disposeBag: DisposeBag, showLoader: Bool = false) {
-        if showLoader {
-            //              BaseService.showLoader()
-        }
+    public static func rxRequestCallback<T: Mappable, P: TargetType>(moyaProvider: MoyaProvider<P>, api: P, onSuccess: ((T?)->())? = nil, onError: ((Error)->())? = nil, onCompleted: (()->())? = nil, disposeBag: DisposeBag) {
+        
         let observable: Observable<T?>  = NetworkService.rxRequest(moyaProvider: moyaProvider, api: api)
         observable.subscribe(onNext: { data in
             onSuccess?(data)
-            if showLoader {
-                //                  BaseService.hideLoader()
-            }
         }, onError: { error in
             onError?(error)
-            if showLoader {
-                //                  BaseService.hideLoader()
-            }
         }, onCompleted: onCompleted, onDisposed: nil).disposed(by: disposeBag)
     }
     

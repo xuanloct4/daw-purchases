@@ -13,6 +13,5 @@ class DetailViewRoutable: Routable {
     _ routeElementIdentifier: RouteElementIdentifier,
     animated: Bool,
     completionHandler: @escaping RoutingCompletionHandler) {
-    
   }
 }

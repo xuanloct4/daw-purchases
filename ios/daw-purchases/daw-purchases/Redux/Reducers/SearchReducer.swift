@@ -33,25 +33,11 @@ func searchReducer(action: Action, state: SearchState?) -> SearchState {
 //      break
 //    }
 //    break
-    
-    case let action as SearchPurchasesByUserAction:
-    state.username = action.username
-    state.purchaseResults = action.results
-    break
+ 
   case let action as SearchUserPurchaseProductAction:
     state.username = action.username
     state.productResults = action.results
     break
-    
-   
-    
-  case let action as GetProductInfoAction:
-    state.productResult = action.results
-    break
-  case _ as ResetSearchAction:
-    state.username = nil
-    state.productResults = nil
-    state.limit = nil
   default:
     break
   }
