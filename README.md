@@ -3,6 +3,7 @@
 ## Mobile UI
 The mobile application for exploring the Discount Ascii Warehouse
 ecommerce platform.
+This is an open source application, the source code is available at [daw-purchases](https://github.com/xuanloct4/daw-purchases/)
 
 The application will show a list of "User purchases".
 

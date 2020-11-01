@@ -11,8 +11,8 @@ For more information about the RxSwift and how to use it, refer to [RxSwift](htt
 ## UI Flow
 The following diagram represents Flow of the application
 
-![App Flow](/ios/images/app_flow.png)
-
+![App Flow](/ios/images/app_flow.png "Flow of product search")
+"Flow of product search"
 ## Build
 Source code for the application can be built successfully using
 * Xcode 11.5+
@@ -30,7 +30,7 @@ pod update
 ## Code Organization
 The source code of the application is grouped into groups with structure as below
 * Extensions
-            The Extensions group contains class extension of most common used class like String, Sequence, Collection View, Label
+            The Extensions group contains class extension of most common used class like String, Sequence, CollectionView, Label
 * Globals
             The Globals group contains some Utilities class for date conversion (DateUtil), Sizes, APIError(Errors)
 * Models
@@ -73,13 +73,17 @@ The source code of the application is grouped into groups with structure as belo
 
 The application follows standard ReSwift MVVM architecture
 
-![Reswift](/ios/images/reswift_concept.png)
+![Reswift](/ios/images/reswift_concept.png "Reswift concept")
+"Reswift concept"
 
-![MVVM](/ios/images/MVVM_concept.png)
-
+![MVVM](/ios/images/MVVM_concept.png "MVVM concept")
+"MVVM concept"
 
 ## Sequence Diagram
+The following sequence diagram shows the orderly sequence of calls between Components
 
+![Sequence Diagram](/ios/images/search_sequence.png "Sequence Diagram")
+"Sequence Diagram"
 
 ## Unit test
 The application was not fully implemented unit tests for all components.
@@ -91,14 +95,17 @@ For illustration purpose, the Redux components are unit tested only
 ## Screenshot
 Following images is screenshot for the application
 
-![Search Empty](/ios/screenshots/Search_Empty.png)
+![Search Empty](/ios/screenshots/Search_Empty.png "Search Empty")
+Search for empty input
 
-![Search Found](/ios/screenshots/Search_Found.png)
+![Search Found](/ios/screenshots/Search_Found.png "Search with non-empty result")
+"Search with non-empty result"
 
-![Search Not Found](/ios/screenshots/Search_Not_Found.png)
+![Search Not Found](/ios/screenshots/Search_Not_Found.png "Search with empty result")
+"Search with empty result"
 
-![Product Detail](/ios/screenshots/Product_Detail.png)
-
+![Product Detail](/ios/screenshots/Product_Detail.png "Product detail screen" )
+"Product detail screen"
 
 
 
