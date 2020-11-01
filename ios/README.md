@@ -11,7 +11,7 @@ For more information about the RxSwift and how to use it, refer to [RxSwift](htt
 ## UI Flow
 The following diagram represents Flow of the application
 
-![App Flow](/images/app_flow.png)
+![App Flow](/ios/images/app_flow.png)
 
 ## Build
 Source code for the application can be built successfully using
@@ -73,9 +73,9 @@ The source code of the application is grouped into groups with structure as belo
 
 The application follows standard ReSwift MVVM architecture
 
-![Reswift](/images/reswift_concept.png)
+![Reswift](/ios/images/reswift_concept.png)
 
-![MVVM](/images/MVVM_concept.png)
+![MVVM](/ios/images/MVVM_concept.png)
 
 
 ## Sequence Diagram
@@ -91,13 +91,13 @@ For illustration purpose, the Redux components are unit tested only
 ## Screenshot
 Following images is screenshot for the application
 
-![Search Empty](/screenshots/Search_Empty.png)
+![Search Empty](/ios/screenshots/Search_Empty.png)
 
-![Search Found](/screenshots/Search_Found.png)
+![Search Found](/ios/screenshots/Search_Found.png)
 
-![Search Not Found](/screenshots/Search_Not_Found.png)
+![Search Not Found](/ios/screenshots/Search_Not_Found.png)
 
-![Product Detail](/screenshots/Product_Detail.png)
+![Product Detail](/ios/screenshots/Product_Detail.png)
 
 
 
