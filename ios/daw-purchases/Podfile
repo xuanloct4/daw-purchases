@@ -6,25 +6,28 @@ def shared_pods
 #  pod 'TwitterKit'
   
   # Networking
-  pod 'Moya/RxSwift', '~> 11.0'
+  pod 'Moya/RxSwift', '14.0.0'
+  pod 'Result', '5.0.0'
 
   # Data'
-  pod 'ObjectMapper'
+  pod 'ObjectMapper', '4.2.0'
 
   # Utility
-  pod 'R.swift'
+  pod 'R.swift', '5.2.2'
 
   # UI Helper
-  pod 'IQKeyboardManagerSwift'
+  pod 'IQKeyboardManagerSwift', '6.5.6'
   
   # Redux
-  pod 'ReSwift'
-  pod 'ReSwiftRouter'
-  pod 'ReRxSwift', '~> 1.0'
+  pod 'ReSwift', '5.0.0'
+  pod 'ReSwiftRouter', '~>0.7.1'
+  pod 'ReRxSwift', '2.2.2'
   
   # Reactive
-  pod 'RxSwift', '~> 4.0'
-  pod 'RxCocoa', '~> 4.0'
+  pod 'RxSwift', '5.1.1'
+  pod 'RxCocoa', '5.1.1'
+  
+
 end
 
 
@@ -39,6 +42,8 @@ target 'daw-purchases' do
   target 'daw-purchasesTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxBlocking', '5.1.1'
+    pod 'RxTest', '5.1.1'
   end
 
   target 'daw-purchasesUITests' do

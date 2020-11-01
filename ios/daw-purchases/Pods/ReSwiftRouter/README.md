@@ -42,7 +42,7 @@ And run `pod install`.
 
 You can install ReSwiftRouter via [Carthage]() by adding the following line to your Cartfile:
 
-	github "ReSwift/ReSwiftRouter"
+	github "ReSwift/ReSwift-Router"
 
 # Configuration
 
@@ -61,7 +61,7 @@ After you've initialized your store, create an instance of `Router`, passing in 
 
 ```swift
 router = Router(store: mainStore, rootRoutable: RootRoutable(routable: rootViewController)) { state in 
-	state.navigationState
+	state.select { $0.navigationState }
 }
 ```
 

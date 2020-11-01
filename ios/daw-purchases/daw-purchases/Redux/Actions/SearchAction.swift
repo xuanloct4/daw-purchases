@@ -47,7 +47,7 @@ extension SearchState {
         
         let productIdsObservable = Observable.of(productIds)
         let productInfoObservables = Observable.merge(productObservables).asObservable()
-        productInfoObservables.bind(onNext: { purchases, product in
+        productInfoObservables.subscribe(onNext: { purchases, product in
             if let product = product {
                 product.product?.recent.removeAll()
                 _ = purchases?.purchases.map { p in

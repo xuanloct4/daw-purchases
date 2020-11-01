@@ -52,7 +52,7 @@ class SearchViewController: UIViewController, Routable {
         searchBar.rx.text
             .orEmpty // Make it non-optional
             .skip(1)
-            .debounce(0.5, scheduler: MainScheduler.instance) // Wait 0.5 for changes.
+            .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance) // Wait 0.5 for changes.
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] text in
                 if text != "" {

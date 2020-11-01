@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		168577FAEC45F500CA131AF5 /* Pods_daw_purchases.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE9132A33A09B0185D4805A /* Pods_daw_purchases.framework */; };
 		1A08774D254C8CB100F5D219 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08774C254C8CB100F5D219 /* Sequence.swift */; };
-		1A08774F254D0C4700F5D219 /* DefaultAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08774E254D0C4700F5D219 /* DefaultAlamofireManager.swift */; };
 		1A087751254D104C00F5D219 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A087750254D104C00F5D219 /* NetworkService.swift */; };
 		1A087755254D8AE900F5D219 /* CollectionView+EmptyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A087754254D8AE900F5D219 /* CollectionView+EmptyMessage.swift */; };
 		1A2519992547891E00B3968F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2519982547891E00B3968F /* AppDelegate.swift */; };
@@ -20,6 +19,7 @@
 		1A2C2F4D254B38EB005B7766 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C2F4C254B38EB005B7766 /* DateUtils.swift */; };
 		1A547ECB254DABBA00BC19D5 /* Label+ActualHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A547ECA254DABBA00BC19D5 /* Label+ActualHeight.swift */; };
 		1A547ECD254DB37600BC19D5 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A547ECC254DB37600BC19D5 /* Sizes.swift */; };
+		1A547ED0254DE35700BC19D5 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A547ECF254DE35700BC19D5 /* StoreTests.swift */; };
 		1AC12CC3254BBA7600246EF8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12CC2254BBA7500246EF8 /* Product.swift */; };
 		1ACB5DB92549B70400B75C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACB5D852549B70000B75C79 /* LaunchScreen.storyboard */; };
 		1ACB5DBC2549B70400B75C79 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5D8B2549B70000B75C79 /* SearchViewController.swift */; };
@@ -46,7 +46,6 @@
 		1ACB5DDA2549B70400B75C79 /* RootRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5DB52549B70400B75C79 /* RootRoutable.swift */; };
 		1ACB5DDB2549B70400B75C79 /* SearchViewRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5DB62549B70400B75C79 /* SearchViewRoutable.swift */; };
 		1ACB5DDC2549B70400B75C79 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5DB72549B70400B75C79 /* Router.swift */; };
-		1ACB5DDD2549B70400B75C79 /* SplashViewRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5DB82549B70400B75C79 /* SplashViewRoutable.swift */; };
 		1ACB5DE0254A444600B75C79 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5DDF254A444600B75C79 /* R.generated.swift */; };
 		BC028306645106F440E6EA0D /* Pods_daw_purchasesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E09B89A5645BCDAD67C9D6 /* Pods_daw_purchasesTests.framework */; };
 		F77F032355B9B5E055A92D44 /* Pods_daw_purchases_daw_purchasesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899BCF700CB073AF5F1ED25E /* Pods_daw_purchases_daw_purchasesUITests.framework */; };
@@ -71,7 +70,6 @@
 
 /* Begin PBXFileReference section */
 		1A08774C254C8CB100F5D219 /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
-		1A08774E254D0C4700F5D219 /* DefaultAlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultAlamofireManager.swift; sourceTree = "<group>"; };
 		1A087750254D104C00F5D219 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1A087754254D8AE900F5D219 /* CollectionView+EmptyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+EmptyMessage.swift"; sourceTree = "<group>"; };
 		1A2519952547891E00B3968F /* daw-purchases.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "daw-purchases.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +86,7 @@
 		1A2C2F4C254B38EB005B7766 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		1A547ECA254DABBA00BC19D5 /* Label+ActualHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+ActualHeight.swift"; sourceTree = "<group>"; };
 		1A547ECC254DB37600BC19D5 /* Sizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
+		1A547ECF254DE35700BC19D5 /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
 		1AC12CC2254BBA7500246EF8 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1ACB5D862549B70000B75C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ACB5D8B2549B70000B75C79 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +113,6 @@
 		1ACB5DB52549B70400B75C79 /* RootRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRoutable.swift; sourceTree = "<group>"; };
 		1ACB5DB62549B70400B75C79 /* SearchViewRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewRoutable.swift; sourceTree = "<group>"; };
 		1ACB5DB72549B70400B75C79 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		1ACB5DB82549B70400B75C79 /* SplashViewRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewRoutable.swift; sourceTree = "<group>"; };
 		1ACB5DDF254A444600B75C79 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		2DE9132A33A09B0185D4805A /* Pods_daw_purchases.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daw_purchases.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		425CEFC4668468AFC4A99302 /* Pods-daw-purchasesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchasesTests.debug.xcconfig"; path = "Target Support Files/Pods-daw-purchasesTests/Pods-daw-purchasesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +196,7 @@
 		1A2519AE2547892100B3968F /* daw-purchasesTests */ = {
 			isa = PBXGroup;
 			children = (
+				1A547ECE254DE21200BC19D5 /* Redux */,
 				1A2519AF2547892100B3968F /* daw_purchasesTests.swift */,
 				1A2519B12547892100B3968F /* Info.plist */,
 			);
@@ -211,6 +210,14 @@
 				1A2519BC2547892100B3968F /* Info.plist */,
 			);
 			path = "daw-purchasesUITests";
+			sourceTree = "<group>";
+		};
+		1A547ECE254DE21200BC19D5 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				1A547ECF254DE35700BC19D5 /* StoreTests.swift */,
+			);
+			path = Redux;
 			sourceTree = "<group>";
 		};
 		1ACB5D832549B70000B75C79 /* Scenes */ = {
@@ -270,7 +277,6 @@
 		1ACB5D942549B70100B75C79 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				1A08774E254D0C4700F5D219 /* DefaultAlamofireManager.swift */,
 				1ACB5D962549B70100B75C79 /* DAWProvider.swift */,
 				1A087750254D104C00F5D219 /* NetworkService.swift */,
 			);
@@ -356,7 +362,6 @@
 				1ACB5DB52549B70400B75C79 /* RootRoutable.swift */,
 				1ACB5DB62549B70400B75C79 /* SearchViewRoutable.swift */,
 				1ACB5DB72549B70400B75C79 /* Router.swift */,
-				1ACB5DB82549B70400B75C79 /* SplashViewRoutable.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -415,6 +420,7 @@
 				1A2519A72547892100B3968F /* Sources */,
 				1A2519A82547892100B3968F /* Frameworks */,
 				1A2519A92547892100B3968F /* Resources */,
+				3398CB8DC3B9190344B1B6BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -533,11 +539,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		3398CB8DC3B9190344B1B6BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-daw-purchasesTests/Pods-daw-purchasesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-daw-purchasesTests/Pods-daw-purchasesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-daw-purchasesTests/Pods-daw-purchasesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		6A2CEF95BD73F8D38BEFD8A7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -647,7 +670,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ACB5DBC2549B70400B75C79 /* SearchViewController.swift in Sources */,
-				1ACB5DDD2549B70400B75C79 /* SplashViewRoutable.swift in Sources */,
 				1A08774D254C8CB100F5D219 /* Sequence.swift in Sources */,
 				1ACB5DCC2549B70400B75C79 /* DetailState.swift in Sources */,
 				1ACB5DC92549B70400B75C79 /* Redux.swift in Sources */,
@@ -674,7 +696,6 @@
 				1ACB5DD92549B70400B75C79 /* DetailViewRoutable.swift in Sources */,
 				1ACB5DE0254A444600B75C79 /* R.generated.swift in Sources */,
 				1AC12CC3254BBA7600246EF8 /* Product.swift in Sources */,
-				1A08774F254D0C4700F5D219 /* DefaultAlamofireManager.swift in Sources */,
 				1A547ECD254DB37600BC19D5 /* Sizes.swift in Sources */,
 				1A547ECB254DABBA00BC19D5 /* Label+ActualHeight.swift in Sources */,
 				1ACB5DC12549B70400B75C79 /* DetailViewController.swift in Sources */,
@@ -687,6 +708,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2519B02547892100B3968F /* daw_purchasesTests.swift in Sources */,
+				1A547ED0254DE35700BC19D5 /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

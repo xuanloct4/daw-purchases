@@ -13,7 +13,7 @@ import RxSwift
 import Moya
 
 struct SearchState: StateType, Encodable {
-    static var moyaProvider: MoyaProvider<DAWProvider> = MoyaProvider<DAWProvider>(manager: DefaultAlamofireManager.sharedManager, plugins: [NetworkLoggerPlugin(verbose: true)])
+    static var moyaProvider: MoyaProvider<DAWProvider> = MoyaProvider<DAWProvider>()
     static var disposeBag = DisposeBag()
     var username: String?
     var purchaseResults: Result<[Purchase], APIError>?

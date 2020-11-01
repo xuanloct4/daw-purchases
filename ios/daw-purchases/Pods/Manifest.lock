@@ -1,38 +1,47 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (5.3.0)
   - IQKeyboardManagerSwift (6.5.6)
-  - Moya/Core (11.0.2):
-    - Alamofire (~> 4.1)
-    - Result (~> 3.0)
-  - Moya/RxSwift (11.0.2):
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
     - Moya/Core
-    - RxSwift (~> 4.0)
+    - RxSwift (~> 5.0)
   - ObjectMapper (4.2.0)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
   - R.swift.Library (5.2.0)
-  - ReRxSwift (1.2.2):
-    - ReSwift (~> 4.0)
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
-  - Result (3.2.4)
-  - ReSwift (4.0.1)
-  - ReSwiftRouter (0.6.0):
-    - ReSwift (~> 4.0.0)
-  - RxCocoa (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxSwift (4.5.0)
+  - ReRxSwift (2.2.2):
+    - ReSwift (~> 5)
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - Result (5.0.0)
+  - ReSwift (5.0.0)
+  - ReSwiftRouter (0.7.1):
+    - ReSwift (~> 5.0.0)
+  - RxBlocking (5.1.1):
+    - RxSwift (~> 5)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - RxTest (5.1.1):
+    - RxSwift (~> 5)
 
 DEPENDENCIES:
-  - IQKeyboardManagerSwift
-  - Moya/RxSwift (~> 11.0)
-  - ObjectMapper
-  - R.swift
-  - ReRxSwift (~> 1.0)
-  - ReSwift
-  - ReSwiftRouter
-  - RxCocoa (~> 4.0)
-  - RxSwift (~> 4.0)
+  - IQKeyboardManagerSwift (= 6.5.6)
+  - Moya/RxSwift (= 14.0.0)
+  - ObjectMapper (= 4.2.0)
+  - R.swift (= 5.2.2)
+  - ReRxSwift (= 2.2.2)
+  - Result (= 5.0.0)
+  - ReSwift (= 5.0.0)
+  - ReSwiftRouter (~> 0.7.1)
+  - RxBlocking (= 5.1.1)
+  - RxCocoa (= 5.1.1)
+  - RxSwift (= 5.1.1)
+  - RxTest (= 5.1.1)
 
 SPEC REPOS:
   trunk:
@@ -46,23 +55,29 @@ SPEC REPOS:
     - Result
     - ReSwift
     - ReSwiftRouter
+    - RxBlocking
     - RxCocoa
+    - RxRelay
     - RxSwift
+    - RxTest
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
-  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
-  ReRxSwift: f442fb438094237a2918f9345709a31b2a64a9cd
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
-  ReSwiftRouter: 81f41b37a5dd1c88e1d3d10a660ff2dcc939ba7c
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  ReRxSwift: be3815ed112f01ee22391cd8dd83341c37fda4dc
+  Result: ed341d2f236af425b803e690e9bd8fd0a0cb7c5a
+  ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
+  ReSwiftRouter: 916d8f940dbecc1d32dc1912b8f1891c7bcc7836
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
 
-PODFILE CHECKSUM: 10836275cf1a5e885ec32b12807ba176deb1d9ff
+PODFILE CHECKSUM: 38a14909c5dd65eabe25f5db80667bbc625939a0
 
 COCOAPODS: 1.9.1

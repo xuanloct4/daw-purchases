@@ -25,8 +25,8 @@ open class Router<State: StateType>: StoreSubscriber {
     }
 
     open func newState(state: NavigationState) {
-        let routingActions = Router.routingActionsForTransitionFrom(
-            lastNavigationState.route, newRoute: state.route)
+      let routingActions = Router.routingActionsForTransition(from: lastNavigationState.route,
+                                                              to: state.route)
 
         routingActions.forEach { routingAction in
 
@@ -114,12 +114,13 @@ open class Router<State: StateType>: StoreSubscriber {
     // is not represented in the route, e.g.
     // route = ["tabBar"]
     // routables = [RootRoutable, TabBarRoutable]
-    static func routableIndexForRouteSegment(_ segment: Int) -> Int {
-        return segment + 1
+    static func routableIndex(for segment: Int) -> Int {
+      return segment + 1
     }
 
-    static func routingActionsForTransitionFrom(_ oldRoute: Route,
-        newRoute: Route) -> [RoutingActions] {
+    static func routingActionsForTransition(
+      from oldRoute: Route,
+      to newRoute: Route) -> [RoutingActions] {
 
             var routingActions: [RoutingActions] = []
 
@@ -147,7 +148,7 @@ open class Router<State: StateType>: StoreSubscriber {
                 let routeSegmentToPop = oldRoute[routeBuildingIndex]
 
                 let popAction = RoutingActions.pop(
-                    responsibleRoutableIndex: routableIndexForRouteSegment(routeBuildingIndex - 1),
+                    responsibleRoutableIndex: routableIndex(for: routeBuildingIndex - 1),
                     segmentToBePopped: routeSegmentToPop
                 )
 
@@ -155,29 +156,30 @@ open class Router<State: StateType>: StoreSubscriber {
                 routeBuildingIndex -= 1
             }
 
+            // This is the 3. case:
+            // "The new route has a different element after the commonSubroute, we need to replace
+            //  the old route element with the new one"
+             if oldRoute.count > (commonSubroute + 1) && newRoute.count > (commonSubroute + 1) {
+                let changeAction = RoutingActions.change(
+                    responsibleRoutableIndex: routableIndex(for: commonSubroute),
+                    segmentToBeReplaced: oldRoute[commonSubroute + 1],
+                    newSegment: newRoute[commonSubroute + 1])
+                
+                routingActions.append(changeAction)
+            }
             // This is the 1. case:
             // "The old route had an element after the commonSubroute and the new route does not
             //  we need to pop the route segment after the commonSubroute"
-            if oldRoute.count > newRoute.count {
+            else if oldRoute.count > newRoute.count {
                 let popAction = RoutingActions.pop(
-                    responsibleRoutableIndex: routableIndexForRouteSegment(routeBuildingIndex - 1),
+                    responsibleRoutableIndex: routableIndex(for: routeBuildingIndex - 1),
                     segmentToBePopped: oldRoute[routeBuildingIndex]
                 )
 
                 routingActions.append(popAction)
                 routeBuildingIndex -= 1
             }
-            // This is the 3. case:
-            // "The new route has a different element after the commonSubroute, we need to replace
-            //  the old route element with the new one"
-            else if oldRoute.count > (commonSubroute + 1) && newRoute.count > (commonSubroute + 1) {
-                let changeAction = RoutingActions.change(
-                    responsibleRoutableIndex: routableIndexForRouteSegment(commonSubroute),
-                    segmentToBeReplaced: oldRoute[commonSubroute + 1],
-                    newSegment: newRoute[commonSubroute + 1])
-
-                routingActions.append(changeAction)
-            }
+        
 
             // Push remainder of elements in new Route that weren't in old Route, this covers
             // the 2. case:
@@ -189,7 +191,7 @@ open class Router<State: StateType>: StoreSubscriber {
                 let routeSegmentToPush = newRoute[routeBuildingIndex + 1]
 
                 let pushAction = RoutingActions.push(
-                    responsibleRoutableIndex: routableIndexForRouteSegment(routeBuildingIndex),
+                    responsibleRoutableIndex: routableIndex(for: routeBuildingIndex),
                     segmentToBePushed: routeSegmentToPush
                 )
 
@@ -202,7 +204,9 @@ open class Router<State: StateType>: StoreSubscriber {
 
 }
 
-func ReSwiftRouterStuck() {}
+func ReSwiftRouterStuck() {
+    return
+}
 
 enum RoutingActions {
     case push(responsibleRoutableIndex: Int, segmentToBePushed: RouteElementIdentifier)
