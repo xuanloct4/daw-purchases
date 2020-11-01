@@ -25,7 +25,7 @@ class SearchViewRoutable: Routable {
       let detailController = R.storyboard.detail.instantiateInitialViewController()!
       
       (viewController as! UINavigationController).pushViewController(detailController, animated: animated)
-      
+      completionHandler()
       return DetailViewRoutable()
     }
     
@@ -37,7 +37,8 @@ class SearchViewRoutable: Routable {
     animated: Bool,
     completionHandler: @escaping RoutingCompletionHandler) {
     
-    store.dispatch(DetailAction(product: nil))
+//    store.dispatch(DetailAction(product: nil))
+    completionHandler()
   }
   
   public func changeRouteSegment(
@@ -45,7 +46,8 @@ class SearchViewRoutable: Routable {
     to: RouteElementIdentifier,
     animated: Bool,
     completionHandler: @escaping RoutingCompletionHandler) -> Routable {
-    
+    completionHandler()
     return SearchViewRoutable(viewController)
+    
   }
 }

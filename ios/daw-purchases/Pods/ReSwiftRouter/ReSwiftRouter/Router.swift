@@ -204,9 +204,7 @@ open class Router<State: StateType>: StoreSubscriber {
 
 }
 
-func ReSwiftRouterStuck() {
-    return
-}
+func ReSwiftRouterStuck() {}
 
 enum RoutingActions {
     case push(responsibleRoutableIndex: Int, segmentToBePushed: RouteElementIdentifier)
