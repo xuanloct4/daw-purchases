@@ -15,7 +15,7 @@ import Result
 import ReRxSwift
 
 class SearchViewController: UIViewController, Routable {
-    let notFoundMessage = "User with username of '%s' was not found"
+    let notFoundMessage = "User with username of '%@' was not found"
     let limit = 5
     let connection = Connection(store: store,
                                 mapStateToProps: mapStateToProps,
@@ -103,8 +103,15 @@ class SearchViewController: UIViewController, Routable {
         connection.disconnect()
     }
     
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
     private func configureCollectionView() {
-        collectionView.register(R.nib.productCell(), forCellWithReuseIdentifier: R.reuseIdentifier.productCell.identifier)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+        collectionView.register(UINib(resource: R.nib.productCell), forCellWithReuseIdentifier: R.reuseIdentifier.productCell.identifier)
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             if #available(iOS 10.0, *) {
                 flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -132,7 +139,7 @@ extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let searchText = searchBar.text ?? ""
         if(!searchText.isEmpty && results.count == 0) {
-            self.collectionView.setEmptyMessage(String(format: "User with username of '%@' was not found", searchText) )
+            self.collectionView.setEmptyMessage(String(format: self.notFoundMessage, searchText) )
         } else {
             self.collectionView.setEmptyMessage("")
         }

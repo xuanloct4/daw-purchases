@@ -7,7 +7,6 @@
 //
 
 import ReSwift
-import Result
 
 func searchReducer(action: Action, state: SearchState?) -> SearchState {
     var state = state ?? SearchState()

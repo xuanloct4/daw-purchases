@@ -13,10 +13,7 @@ import RxSwift
 import Moya
 
 struct SearchState: StateType, Encodable {
-    static var moyaProvider: MoyaProvider<DAWProvider> = MoyaProvider<DAWProvider>()
-    static var disposeBag = DisposeBag()
     var username: String?
-    var purchaseResults: Result<[Purchase], APIError>?
     var productResults: Result<[Product], APIError>?
     var limit: Int?
     

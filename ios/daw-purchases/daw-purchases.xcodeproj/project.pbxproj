@@ -19,7 +19,10 @@
 		1A2C2F4D254B38EB005B7766 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C2F4C254B38EB005B7766 /* DateUtils.swift */; };
 		1A547ECB254DABBA00BC19D5 /* Label+ActualHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A547ECA254DABBA00BC19D5 /* Label+ActualHeight.swift */; };
 		1A547ECD254DB37600BC19D5 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A547ECC254DB37600BC19D5 /* Sizes.swift */; };
-		1A547ED0254DE35700BC19D5 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A547ECF254DE35700BC19D5 /* StoreTests.swift */; };
+		1A547ED0254DE35700BC19D5 /* ReduxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A547ECF254DE35700BC19D5 /* ReduxTests.swift */; };
+		1A547ED8254E9E7F00BC19D5 /* SearchReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A547ED7254E9E7F00BC19D5 /* SearchReducerTests.swift */; };
+		1A547EDA254E9E8F00BC19D5 /* AppReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A547ED9254E9E8F00BC19D5 /* AppReducerTests.swift */; };
+		1A547EDC254E9E9D00BC19D5 /* DetailReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A547EDB254E9E9D00BC19D5 /* DetailReducerTests.swift */; };
 		1AC12CC3254BBA7600246EF8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12CC2254BBA7500246EF8 /* Product.swift */; };
 		1ACB5DB92549B70400B75C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACB5D852549B70000B75C79 /* LaunchScreen.storyboard */; };
 		1ACB5DBC2549B70400B75C79 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5D8B2549B70000B75C79 /* SearchViewController.swift */; };
@@ -86,7 +89,10 @@
 		1A2C2F4C254B38EB005B7766 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		1A547ECA254DABBA00BC19D5 /* Label+ActualHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+ActualHeight.swift"; sourceTree = "<group>"; };
 		1A547ECC254DB37600BC19D5 /* Sizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
-		1A547ECF254DE35700BC19D5 /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
+		1A547ECF254DE35700BC19D5 /* ReduxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxTests.swift; sourceTree = "<group>"; };
+		1A547ED7254E9E7F00BC19D5 /* SearchReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReducerTests.swift; sourceTree = "<group>"; };
+		1A547ED9254E9E8F00BC19D5 /* AppReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducerTests.swift; sourceTree = "<group>"; };
+		1A547EDB254E9E9D00BC19D5 /* DetailReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReducerTests.swift; sourceTree = "<group>"; };
 		1AC12CC2254BBA7500246EF8 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1ACB5D862549B70000B75C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ACB5D8B2549B70000B75C79 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -215,9 +221,20 @@
 		1A547ECE254DE21200BC19D5 /* Redux */ = {
 			isa = PBXGroup;
 			children = (
-				1A547ECF254DE35700BC19D5 /* StoreTests.swift */,
+				1A547ED3254E9DF800BC19D5 /* Reducers */,
+				1A547ECF254DE35700BC19D5 /* ReduxTests.swift */,
 			);
 			path = Redux;
+			sourceTree = "<group>";
+		};
+		1A547ED3254E9DF800BC19D5 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				1A547ED7254E9E7F00BC19D5 /* SearchReducerTests.swift */,
+				1A547ED9254E9E8F00BC19D5 /* AppReducerTests.swift */,
+				1A547EDB254E9E9D00BC19D5 /* DetailReducerTests.swift */,
+			);
+			path = Reducers;
 			sourceTree = "<group>";
 		};
 		1ACB5D832549B70000B75C79 /* Scenes */ = {
@@ -539,7 +556,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -708,7 +725,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2519B02547892100B3968F /* daw_purchasesTests.swift in Sources */,
-				1A547ED0254DE35700BC19D5 /* StoreTests.swift in Sources */,
+				1A547EDC254E9E9D00BC19D5 /* DetailReducerTests.swift in Sources */,
+				1A547ED0254DE35700BC19D5 /* ReduxTests.swift in Sources */,
+				1A547ED8254E9E7F00BC19D5 /* SearchReducerTests.swift in Sources */,
+				1A547EDA254E9E8F00BC19D5 /* AppReducerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,6 @@ enum DAWProvider {
 extension DAWProvider : TargetType {
     var baseURL: URL { return URL(string: "http://localhost:8000/api")! }
     
-    
     var path: String {
         switch self {
         case .getPurchasesByUser(let username, _):

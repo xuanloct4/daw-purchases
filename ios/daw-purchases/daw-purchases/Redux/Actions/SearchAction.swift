@@ -24,10 +24,17 @@ extension SearchState {
         return SearchUserPurchaseProduct()
     }
     
-    public static func listUserPurchaseProduct(username: String, purchases: [Purchase]) -> SearchUserPurchaseProduct {
+    public static func listProduct(purchases: [Purchase]) -> [Int] {
         let productIds:[Int] = purchases.map { purchase in
-            return purchase.productId
-        }.unique()
+                   return purchase.productId
+               }.unique()
+        return productIds
+    }
+    
+    public static func listUserPurchaseProduct(username: String, purchases: [Purchase]) -> SearchUserPurchaseProduct {
+        let productIds = listProduct(purchases: purchases)
+        var productInfo = [Product]()
+        let productIdsObservable = Observable.of(productIds)
         
         if(productIds.count == 0) {
             store.dispatch(SearchUserPurchaseProductAction(username: username, results: .success([])))
@@ -43,9 +50,6 @@ extension SearchState {
             return observable
         }
         
-        var productInfo = [Product]()
-        
-        let productIdsObservable = Observable.of(productIds)
         let productInfoObservables = Observable.merge(productObservables).asObservable()
         productInfoObservables.subscribe(onNext: { purchases, product in
             if let product = product {
@@ -55,13 +59,13 @@ extension SearchState {
                 }
                 productInfo.append(product)
             }
-        }).disposed(by: SearchState.disposeBag)
+        }).disposed(by: NetworkService.disposeBag)
         
-        _ = Observable.zip(productIdsObservable,productInfoObservables).subscribe(onNext: { _,_ in
+        _ = Observable.zip(productIdsObservable,productInfoObservables).bind(onNext: { _,_ in
             productInfo.sort { a,b in
                 let recentA = a.product?.recent ?? []
                 let recentB = b.product?.recent ?? []
-                
+
                 return recentA.count > recentB.count
             }
             store.dispatch(SearchUserPurchaseProductAction(username: username, results: .success(productInfo)))

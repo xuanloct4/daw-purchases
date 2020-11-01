@@ -12,13 +12,16 @@ import RxSwift
 import ObjectMapper
 
 class NetworkService: NSObject {
+    static var moyaProvider: MoyaProvider<DAWProvider> = MoyaProvider<DAWProvider>()
+    static var disposeBag = DisposeBag()
+    
     public static func rxRequestCallback<T: Mappable>(api: DAWProvider, onSuccess: ((T?)->())? = nil, onError: ((Error)->())? = nil, onCompleted: (()->())? = nil) {
         let observable: Observable<T?>  = NetworkService.rxRequest(api: api)
         observable.subscribe(onNext: { data in
             onSuccess?(data)
         }, onError: { error in
             onError?(error)
-        }, onCompleted: onCompleted, onDisposed: nil).disposed(by: SearchState.disposeBag)
+        }, onCompleted: onCompleted, onDisposed: nil).disposed(by: NetworkService.disposeBag)
     }
     
     
@@ -33,7 +36,7 @@ class NetworkService: NSObject {
     }
     
     public static func rxRequest<T: Mappable>(api: DAWProvider) -> Observable<T?> {
-        return NetworkService.rxRequest(moyaProvider: SearchState.moyaProvider, api: api)
+        return NetworkService.rxRequest(moyaProvider: NetworkService.moyaProvider, api: api)
     }
     
     
