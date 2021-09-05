@@ -188,8 +188,8 @@ private let mapStateToProps = { (appState: AppState) in
 
 private let mapDispatchToActions = { (dispatch: @escaping DispatchFunction) in
     return SearchViewController.Actions(
-        search: { newQuery, limit in dispatch(SearchState.searchUsersPurchaseProduct(username: newQuery, limit: limit)) },
-        listUserPurchaseProduct: { username, purchases in dispatch(SearchState.listUserPurchaseProduct(username: username, purchases: purchases))},
+        search: { newQuery, limit in dispatch(SearchAction.searchUsersPurchaseProduct(username: newQuery, limit: limit)) },
+        listUserPurchaseProduct: { username, purchases in dispatch(SearchAction.listUserPurchaseProduct(username: username, purchases: purchases))},
         resetSearch: { dispatch(ResetSearchAction()) },
         setDetail: { product in dispatch(DetailAction(product: product)) },
         setRoute: { route in dispatch(ReSwiftRouter.SetRouteAction(route)) }

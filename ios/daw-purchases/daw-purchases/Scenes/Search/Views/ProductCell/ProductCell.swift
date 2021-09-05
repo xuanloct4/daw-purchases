@@ -35,7 +35,6 @@ class ProductCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         translatesAutoresizingMaskIntoConstraints = false
         containerViewWidthConstraint.constant = Sizes.screenWidth
     }

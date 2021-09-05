@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		168577FAEC45F500CA131AF5 /* Pods_daw_purchases.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE9132A33A09B0185D4805A /* Pods_daw_purchases.framework */; };
 		1A08774D254C8CB100F5D219 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A08774C254C8CB100F5D219 /* Sequence.swift */; };
 		1A087751254D104C00F5D219 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A087750254D104C00F5D219 /* NetworkService.swift */; };
 		1A087755254D8AE900F5D219 /* CollectionView+EmptyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A087754254D8AE900F5D219 /* CollectionView+EmptyMessage.swift */; };
@@ -50,8 +49,9 @@
 		1ACB5DDB2549B70400B75C79 /* SearchViewRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5DB62549B70400B75C79 /* SearchViewRoutable.swift */; };
 		1ACB5DDC2549B70400B75C79 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5DB72549B70400B75C79 /* Router.swift */; };
 		1ACB5DE0254A444600B75C79 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACB5DDF254A444600B75C79 /* R.generated.swift */; };
-		BC028306645106F440E6EA0D /* Pods_daw_purchasesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E09B89A5645BCDAD67C9D6 /* Pods_daw_purchasesTests.framework */; };
-		F77F032355B9B5E055A92D44 /* Pods_daw_purchases_daw_purchasesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899BCF700CB073AF5F1ED25E /* Pods_daw_purchases_daw_purchasesUITests.framework */; };
+		3D59FD2D354758E7936E8C28 /* Pods_daw_purchases.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA9216DDCA96C8A5D7AAA24 /* Pods_daw_purchases.framework */; };
+		40C012F2F7771780A56F6C3D /* Pods_daw_purchasesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E5EF7AF5452388D8FE0A32 /* Pods_daw_purchasesTests.framework */; };
+		7ADE0729E075158073A87612 /* Pods_daw_purchases_daw_purchasesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43219B3623519357C70E92B4 /* Pods_daw_purchases_daw_purchasesUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,15 +120,15 @@
 		1ACB5DB62549B70400B75C79 /* SearchViewRoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewRoutable.swift; sourceTree = "<group>"; };
 		1ACB5DB72549B70400B75C79 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1ACB5DDF254A444600B75C79 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		2DE9132A33A09B0185D4805A /* Pods_daw_purchases.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daw_purchases.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		425CEFC4668468AFC4A99302 /* Pods-daw-purchasesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchasesTests.debug.xcconfig"; path = "Target Support Files/Pods-daw-purchasesTests/Pods-daw-purchasesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		899BCF700CB073AF5F1ED25E /* Pods_daw_purchases_daw_purchasesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daw_purchases_daw_purchasesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C314D74351B6C562270E1A1 /* Pods-daw-purchases-daw-purchasesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchases-daw-purchasesUITests.debug.xcconfig"; path = "Target Support Files/Pods-daw-purchases-daw-purchasesUITests/Pods-daw-purchases-daw-purchasesUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A0D7B2335D06EF1740203777 /* Pods-daw-purchases-daw-purchasesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchases-daw-purchasesUITests.release.xcconfig"; path = "Target Support Files/Pods-daw-purchases-daw-purchasesUITests/Pods-daw-purchases-daw-purchasesUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A737AF455917D1E531342971 /* Pods-daw-purchases.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchases.debug.xcconfig"; path = "Target Support Files/Pods-daw-purchases/Pods-daw-purchases.debug.xcconfig"; sourceTree = "<group>"; };
-		B3E09B89A5645BCDAD67C9D6 /* Pods_daw_purchasesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daw_purchasesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6A899F9D65840EDB506D528 /* Pods-daw-purchasesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchasesTests.release.xcconfig"; path = "Target Support Files/Pods-daw-purchasesTests/Pods-daw-purchasesTests.release.xcconfig"; sourceTree = "<group>"; };
-		E22F419C19E56C08887E0F5A /* Pods-daw-purchases.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchases.release.xcconfig"; path = "Target Support Files/Pods-daw-purchases/Pods-daw-purchases.release.xcconfig"; sourceTree = "<group>"; };
+		1CC753436EFE87F0BA646A12 /* Pods-daw-purchasesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchasesTests.debug.xcconfig"; path = "Target Support Files/Pods-daw-purchasesTests/Pods-daw-purchasesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		22F1E5101B8F087A91A1F06E /* Pods-daw-purchases-daw-purchasesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchases-daw-purchasesUITests.release.xcconfig"; path = "Target Support Files/Pods-daw-purchases-daw-purchasesUITests/Pods-daw-purchases-daw-purchasesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		43219B3623519357C70E92B4 /* Pods_daw_purchases_daw_purchasesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daw_purchases_daw_purchasesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50E5EF7AF5452388D8FE0A32 /* Pods_daw_purchasesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daw_purchasesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A35C80573B214C4EEB84B96 /* Pods-daw-purchases-daw-purchasesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchases-daw-purchasesUITests.debug.xcconfig"; path = "Target Support Files/Pods-daw-purchases-daw-purchasesUITests/Pods-daw-purchases-daw-purchasesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D719930675DAB4675BE94DC /* Pods-daw-purchasesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchasesTests.release.xcconfig"; path = "Target Support Files/Pods-daw-purchasesTests/Pods-daw-purchasesTests.release.xcconfig"; sourceTree = "<group>"; };
+		5DA9216DDCA96C8A5D7AAA24 /* Pods_daw_purchases.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_daw_purchases.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CFBA4A940704AB2E286C5C3 /* Pods-daw-purchases.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchases.debug.xcconfig"; path = "Target Support Files/Pods-daw-purchases/Pods-daw-purchases.debug.xcconfig"; sourceTree = "<group>"; };
+		8F92CB74C42FD094D9B48C49 /* Pods-daw-purchases.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-daw-purchases.release.xcconfig"; path = "Target Support Files/Pods-daw-purchases/Pods-daw-purchases.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				168577FAEC45F500CA131AF5 /* Pods_daw_purchases.framework in Frameworks */,
+				3D59FD2D354758E7936E8C28 /* Pods_daw_purchases.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC028306645106F440E6EA0D /* Pods_daw_purchasesTests.framework in Frameworks */,
+				40C012F2F7771780A56F6C3D /* Pods_daw_purchasesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F77F032355B9B5E055A92D44 /* Pods_daw_purchases_daw_purchasesUITests.framework in Frameworks */,
+				7ADE0729E075158073A87612 /* Pods_daw_purchases_daw_purchasesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +167,7 @@
 				1A2519B92547892100B3968F /* daw-purchasesUITests */,
 				1A2519962547891E00B3968F /* Products */,
 				ECE7FD31C6F8DBCC9A976173 /* Pods */,
-				20ABD87C6F316E745FF4D769 /* Frameworks */,
+				287E41EF6438FB2C96AD56C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -383,12 +383,12 @@
 			path = Routes;
 			sourceTree = "<group>";
 		};
-		20ABD87C6F316E745FF4D769 /* Frameworks */ = {
+		287E41EF6438FB2C96AD56C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2DE9132A33A09B0185D4805A /* Pods_daw_purchases.framework */,
-				899BCF700CB073AF5F1ED25E /* Pods_daw_purchases_daw_purchasesUITests.framework */,
-				B3E09B89A5645BCDAD67C9D6 /* Pods_daw_purchasesTests.framework */,
+				5DA9216DDCA96C8A5D7AAA24 /* Pods_daw_purchases.framework */,
+				43219B3623519357C70E92B4 /* Pods_daw_purchases_daw_purchasesUITests.framework */,
+				50E5EF7AF5452388D8FE0A32 /* Pods_daw_purchasesTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -396,12 +396,12 @@
 		ECE7FD31C6F8DBCC9A976173 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A737AF455917D1E531342971 /* Pods-daw-purchases.debug.xcconfig */,
-				E22F419C19E56C08887E0F5A /* Pods-daw-purchases.release.xcconfig */,
-				8C314D74351B6C562270E1A1 /* Pods-daw-purchases-daw-purchasesUITests.debug.xcconfig */,
-				A0D7B2335D06EF1740203777 /* Pods-daw-purchases-daw-purchasesUITests.release.xcconfig */,
-				425CEFC4668468AFC4A99302 /* Pods-daw-purchasesTests.debug.xcconfig */,
-				D6A899F9D65840EDB506D528 /* Pods-daw-purchasesTests.release.xcconfig */,
+				6CFBA4A940704AB2E286C5C3 /* Pods-daw-purchases.debug.xcconfig */,
+				8F92CB74C42FD094D9B48C49 /* Pods-daw-purchases.release.xcconfig */,
+				5A35C80573B214C4EEB84B96 /* Pods-daw-purchases-daw-purchasesUITests.debug.xcconfig */,
+				22F1E5101B8F087A91A1F06E /* Pods-daw-purchases-daw-purchasesUITests.release.xcconfig */,
+				1CC753436EFE87F0BA646A12 /* Pods-daw-purchasesTests.debug.xcconfig */,
+				5D719930675DAB4675BE94DC /* Pods-daw-purchasesTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -413,12 +413,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A2519BF2547892100B3968F /* Build configuration list for PBXNativeTarget "daw-purchases" */;
 			buildPhases = (
-				86F78BB38E39C793F5503DFF /* [CP] Check Pods Manifest.lock */,
+				518E9379C59F3D4F2CEB9708 /* [CP] Check Pods Manifest.lock */,
 				1ACB5DDE254A437C00B75C79 /* R.swift Script */,
 				1A2519912547891E00B3968F /* Sources */,
 				1A2519922547891E00B3968F /* Frameworks */,
 				1A2519932547891E00B3968F /* Resources */,
-				6A2CEF95BD73F8D38BEFD8A7 /* [CP] Embed Pods Frameworks */,
+				8361520E5B01FB2F770B89F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -433,11 +433,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A2519C22547892100B3968F /* Build configuration list for PBXNativeTarget "daw-purchasesTests" */;
 			buildPhases = (
-				F4E32ED385D3B2AFA849B8A1 /* [CP] Check Pods Manifest.lock */,
+				D7CED33566E279863973AE42 /* [CP] Check Pods Manifest.lock */,
 				1A2519A72547892100B3968F /* Sources */,
 				1A2519A82547892100B3968F /* Frameworks */,
 				1A2519A92547892100B3968F /* Resources */,
-				3398CB8DC3B9190344B1B6BA /* [CP] Embed Pods Frameworks */,
+				279BE2F1A5C431CBECA0C1F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -453,11 +453,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A2519C52547892100B3968F /* Build configuration list for PBXNativeTarget "daw-purchasesUITests" */;
 			buildPhases = (
-				DD8DF6A2DE293F281D51CB84 /* [CP] Check Pods Manifest.lock */,
+				C6A0E4BABF3580D8056CAFF6 /* [CP] Check Pods Manifest.lock */,
 				1A2519B22547892100B3968F /* Sources */,
 				1A2519B32547892100B3968F /* Frameworks */,
 				1A2519B42547892100B3968F /* Resources */,
-				A0C65E103316EF71CD26386B /* [CP] Embed Pods Frameworks */,
+				72FF96A0FFCF0F444D2DB957 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -556,13 +556,13 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
-		3398CB8DC3B9190344B1B6BA /* [CP] Embed Pods Frameworks */ = {
+		279BE2F1A5C431CBECA0C1F1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -579,24 +579,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-daw-purchasesTests/Pods-daw-purchasesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6A2CEF95BD73F8D38BEFD8A7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-daw-purchases/Pods-daw-purchases-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-daw-purchases/Pods-daw-purchases-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-daw-purchases/Pods-daw-purchases-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		86F78BB38E39C793F5503DFF /* [CP] Check Pods Manifest.lock */ = {
+		518E9379C59F3D4F2CEB9708 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -618,7 +601,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A0C65E103316EF71CD26386B /* [CP] Embed Pods Frameworks */ = {
+		72FF96A0FFCF0F444D2DB957 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -635,7 +618,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-daw-purchases-daw-purchasesUITests/Pods-daw-purchases-daw-purchasesUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DD8DF6A2DE293F281D51CB84 /* [CP] Check Pods Manifest.lock */ = {
+		8361520E5B01FB2F770B89F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-daw-purchases/Pods-daw-purchases-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-daw-purchases/Pods-daw-purchases-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-daw-purchases/Pods-daw-purchases-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6A0E4BABF3580D8056CAFF6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -657,7 +657,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F4E32ED385D3B2AFA849B8A1 /* [CP] Check Pods Manifest.lock */ = {
+		D7CED33566E279863973AE42 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -883,7 +883,7 @@
 		};
 		1A2519C02547892100B3968F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A737AF455917D1E531342971 /* Pods-daw-purchases.debug.xcconfig */;
+			baseConfigurationReference = 6CFBA4A940704AB2E286C5C3 /* Pods-daw-purchases.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -901,7 +901,7 @@
 		};
 		1A2519C12547892100B3968F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E22F419C19E56C08887E0F5A /* Pods-daw-purchases.release.xcconfig */;
+			baseConfigurationReference = 8F92CB74C42FD094D9B48C49 /* Pods-daw-purchases.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -919,7 +919,7 @@
 		};
 		1A2519C32547892100B3968F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 425CEFC4668468AFC4A99302 /* Pods-daw-purchasesTests.debug.xcconfig */;
+			baseConfigurationReference = 1CC753436EFE87F0BA646A12 /* Pods-daw-purchasesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -941,7 +941,7 @@
 		};
 		1A2519C42547892100B3968F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6A899F9D65840EDB506D528 /* Pods-daw-purchasesTests.release.xcconfig */;
+			baseConfigurationReference = 5D719930675DAB4675BE94DC /* Pods-daw-purchasesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -963,7 +963,7 @@
 		};
 		1A2519C62547892100B3968F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C314D74351B6C562270E1A1 /* Pods-daw-purchases-daw-purchasesUITests.debug.xcconfig */;
+			baseConfigurationReference = 5A35C80573B214C4EEB84B96 /* Pods-daw-purchases-daw-purchasesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -983,7 +983,7 @@
 		};
 		1A2519C72547892100B3968F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0D7B2335D06EF1740203777 /* Pods-daw-purchases-daw-purchasesUITests.release.xcconfig */;
+			baseConfigurationReference = 22F1E5101B8F087A91A1F06E /* Pods-daw-purchases-daw-purchasesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

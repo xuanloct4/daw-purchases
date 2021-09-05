@@ -11,8 +11,17 @@ import Moya
 import RxSwift
 import Result
 import ObjectMapper
+    
+struct SearchUserPurchaseProduct: Action {}
 
-extension SearchState {
+struct SearchUserPurchaseProductAction: Action {
+    let username: String
+    let results: Result<[Product], APIError>
+}
+
+struct ResetSearchAction: Action {}
+
+struct SearchAction {
     public static func searchUsersPurchaseProduct(username: String, limit:Int?) -> SearchUserPurchaseProduct {
         NetworkService.rxRequestCallback(api: .getPurchasesByUser(username: username, limit: limit), onSuccess: { (purchases: Purchases?) in
             
@@ -74,13 +83,3 @@ extension SearchState {
         return SearchUserPurchaseProduct()
     }
 }
-    
-struct SearchUserPurchaseProduct: Action {}
-
-struct SearchUserPurchaseProductAction: Action {
-    let username: String
-    let results: Result<[Product], APIError>
-}
-
-struct ResetSearchAction: Action {}
-
