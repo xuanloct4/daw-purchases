@@ -113,14 +113,18 @@ struct R: Rswift.Validatable {
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
     /// Storyboard `Detail`.
     static let detail = _R.storyboard.detail()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `Main`.
+    static let main = _R.storyboard.main()
     /// Storyboard `Search`.
     static let search = _R.storyboard.search()
+    /// Storyboard `Storyboard`.
+    static let storyboard = _R.storyboard.storyboard()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Detail", bundle: ...)`
@@ -137,9 +141,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Main", bundle: ...)`
+    static func main(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Search", bundle: ...)`
     static func search(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.search)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Storyboard", bundle: ...)`
+    static func storyboard(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.storyboard)
     }
     #endif
 
@@ -147,10 +165,95 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.image` struct is generated, and contains static references to 7 images.
+  struct image {
+    /// Image `Box`.
+    static let box = Rswift.ImageResource(bundle: R.hostingBundle, name: "Box")
+    /// Image `Failed`.
+    static let failed = Rswift.ImageResource(bundle: R.hostingBundle, name: "Failed")
+    /// Image `LaunchImage`.
+    static let launchImage = Rswift.ImageResource(bundle: R.hostingBundle, name: "LaunchImage")
+    /// Image `Placeholder`.
+    static let placeholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "Placeholder")
+    /// Image `Toolbox`.
+    static let toolbox = Rswift.ImageResource(bundle: R.hostingBundle, name: "Toolbox")
+    /// Image `rw-logo`.
+    static let rwLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "rw-logo")
+    /// Image `rwdevcon-bg`.
+    static let rwdevconBg = Rswift.ImageResource(bundle: R.hostingBundle, name: "rwdevcon-bg")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Box", bundle: ..., traitCollection: ...)`
+    static func box(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.box, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Failed", bundle: ..., traitCollection: ...)`
+    static func failed(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.failed, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "LaunchImage", bundle: ..., traitCollection: ...)`
+    static func launchImage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.launchImage, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Placeholder", bundle: ..., traitCollection: ...)`
+    static func placeholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.placeholder, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Toolbox", bundle: ..., traitCollection: ...)`
+    static func toolbox(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.toolbox, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "rw-logo", bundle: ..., traitCollection: ...)`
+    static func rwLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.rwLogo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "rwdevcon-bg", bundle: ..., traitCollection: ...)`
+    static func rwdevconBg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.rwdevconBg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
   struct nib {
+    /// Nib `PhotoDetailViewController`.
+    static let photoDetailViewController = _R.nib._PhotoDetailViewController()
     /// Nib `ProductCell`.
     static let productCell = _R.nib._ProductCell()
+    /// Nib `TableViewCell`.
+    static let tableViewCell = _R.nib._TableViewCell()
+    /// Nib `TableViewController`.
+    static let tableViewController = _R.nib._TableViewController()
+    /// Nib `ViewController`.
+    static let viewController = _R.nib._ViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PhotoDetailViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.photoDetailViewController) instead")
+    static func photoDetailViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.photoDetailViewController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "ProductCell", in: bundle)`
@@ -160,19 +263,63 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.tableViewCell) instead")
+    static func tableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.tableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TableViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.tableViewController) instead")
+    static func tableViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.tableViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.viewController) instead")
+    static func viewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.viewController)
+    }
+    #endif
+
+    static func photoDetailViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.photoDetailViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func productCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProductCell? {
       return R.nib.productCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProductCell
+    }
+
+    static func tableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TableViewCell? {
+      return R.nib.tableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TableViewCell
+    }
+
+    static func tableViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.tableViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func viewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.viewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `CollectionCell`.
     static let collectionCell: Rswift.ReuseIdentifier<UIKit.UIView> = Rswift.ReuseIdentifier(identifier: "CollectionCell")
+    /// Reuse identifier `PostTableViewCell`.
+    static let postTableViewCell: Rswift.ReuseIdentifier<PostTableViewCell> = Rswift.ReuseIdentifier(identifier: "PostTableViewCell")
     /// Reuse identifier `ProductCell`.
     static let productCell: Rswift.ReuseIdentifier<ProductCell> = Rswift.ReuseIdentifier(identifier: "ProductCell")
+    /// Reuse identifier `TableViewCell`.
+    static let tableViewCell: Rswift.ReuseIdentifier<TableViewCell> = Rswift.ReuseIdentifier(identifier: "TableViewCell")
 
     fileprivate init() {}
   }
@@ -193,12 +340,30 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _ViewController.validate()
+    }
+
+    struct _PhotoDetailViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PhotoDetailViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _ProductCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = ProductCell
 
@@ -208,6 +373,49 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ProductCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ProductCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = TableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "TableViewCell"
+      let name = "TableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TableViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TableViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ViewController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "ViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "pencil.circle.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pencil.circle.fill' is used in nib 'ViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "tray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'tray' is used in nib 'ViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
 
       fileprivate init() {}
@@ -227,7 +435,13 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
+      try main.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try search.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try storyboard.validate()
       #endif
     }
 
@@ -264,11 +478,61 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    struct main: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let createPostViewController = StoryboardViewControllerResource<CreatePostViewController>(identifier: "CreatePostViewController")
+      let editPostViewController = StoryboardViewControllerResource<EditPostViewController>(identifier: "EditPostViewController")
+      let name = "Main"
+      let postsViewController = StoryboardViewControllerResource<PostsViewController>(identifier: "PostsViewController")
+
+      func createPostViewController(_: Void = ()) -> CreatePostViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: createPostViewController)
+      }
+
+      func editPostViewController(_: Void = ()) -> EditPostViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: editPostViewController)
+      }
+
+      func postsViewController(_: Void = ()) -> PostsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: postsViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.main().createPostViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createPostViewController' could not be loaded from storyboard 'Main' as 'CreatePostViewController'.") }
+        if _R.storyboard.main().editPostViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editPostViewController' could not be loaded from storyboard 'Main' as 'EditPostViewController'.") }
+        if _R.storyboard.main().postsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'postsViewController' could not be loaded from storyboard 'Main' as 'PostsViewController'.") }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct search: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
       let name = "Search"
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "pencil.circle.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pencil.circle.fill' is used in storyboard 'Search', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "tray", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'tray' is used in storyboard 'Search', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct storyboard: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+
+      let bundle = R.hostingBundle
+      let name = "Storyboard"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {

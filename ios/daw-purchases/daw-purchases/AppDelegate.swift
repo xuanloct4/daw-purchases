@@ -18,23 +18,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
   
         // Set a dummy view controller to satisfy UIKit
-        window?.rootViewController = UIViewController()
+//        window?.rootViewController = ViewController()
+//        window?.rootViewController = TableViewController()
+//        window?.rootViewController = R.storyboard.storyboard.instantiateInitialViewController()
         
-        let rootRoutable = RootRoutable(window: window!)
+       Application.shared.configureMainInterface(in: window!)
+            
         
-        // Set Router
-        router = Router(store: store, rootRoutable: rootRoutable) {
-            $0.select {
-                $0.navigationState
-            }
-        }
-        
-        // Setup Keyboard Manager
-        IQKeyboardManager.shared.enable = true
-        
-        // Start with splash screen (a.k.a Login screen)
-        store.dispatch(ReSwiftRouter.SetRouteAction([RouteNames.search]))
-        
+//        let rootRoutable = RootRoutable(window: window!)
+//
+//        // Set Router
+//        router = Router(store: store, rootRoutable: rootRoutable) {
+//            $0.select {
+//                $0.navigationState
+//            }
+//        }
+//
+//        // Setup Keyboard Manager
+//        IQKeyboardManager.shared.enable = true
+//
+//        // Start with splash screen (a.k.a Login screen)
+//        store.dispatch(ReSwiftRouter.SetRouteAction([RouteNames.search]))
+//
         window?.makeKeyAndVisible()
         
         return true

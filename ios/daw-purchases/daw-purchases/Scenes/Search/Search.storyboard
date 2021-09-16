@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vmC-ex-iK9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vmC-ex-iK9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,6 +27,14 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tm-e5-Icc">
+                                <rect key="frame" x="62" y="338" width="195" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="tray" catalog="system" backgroundImage="pencil.circle.fill"/>
+                                <connections>
+                                    <action selector="onTap:" destination="x3U-Nj-0hY" eventType="touchUpInside" id="mb3-QA-Tsa"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MwK-7o-stl" userLabel="CollectionView">
                                 <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,6 +63,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="GO3-WK-AAg"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MwK-7o-stl" firstAttribute="top" secondItem="ggg-c2-eyZ" secondAttribute="bottom" id="AVM-or-oha"/>
@@ -64,10 +74,10 @@
                             <constraint firstItem="ggg-c2-eyZ" firstAttribute="top" secondItem="GO3-WK-AAg" secondAttribute="top" id="p6K-UZ-EgW"/>
                             <constraint firstItem="MwK-7o-stl" firstAttribute="leading" secondItem="GO3-WK-AAg" secondAttribute="leading" id="z75-b0-eXl"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="GO3-WK-AAg"/>
                     </view>
                     <navigationItem key="navigationItem" title="User purchases" id="RIt-e4-vpD"/>
                     <connections>
+                        <outlet property="btuuon" destination="2tm-e5-Icc" id="57R-Fd-v7G"/>
                         <outlet property="collectionView" destination="MwK-7o-stl" id="GlZ-xR-8MA"/>
                         <outlet property="searchBar" destination="ggg-c2-eyZ" id="ee5-ay-dZw"/>
                         <segue destination="zVd-gD-2RD" kind="showDetail" identifier="showDetail" id="T3h-ZV-8na"/>
@@ -75,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfF-Nh-M7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1365.5999999999999" y="-455.62218890554726"/>
+            <point key="canvasLocation" x="1365.217391304348" y="-456.02678571428567"/>
         </scene>
         <!--Detail-->
         <scene sceneID="aWm-bi-p3m">
@@ -104,4 +114,8 @@
             <point key="canvasLocation" x="601" y="-456"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="tray" catalog="system" width="128" height="88"/>
+    </resources>
 </document>

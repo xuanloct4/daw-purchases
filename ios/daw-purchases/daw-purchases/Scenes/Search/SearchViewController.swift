@@ -13,6 +13,7 @@ import RxCocoa
 import RxSwift
 import Result
 import ReRxSwift
+import MaterialComponents
 
 class SearchViewController: UIViewController, Routable {
     let notFoundMessage = "User with username of '%@' was not found"
@@ -25,10 +26,30 @@ class SearchViewController: UIViewController, Routable {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var btuuon: UIButton!
     
     private var results: [Product] = []
     private var didChangeQuery: PublishSubject = PublishSubject<Void>()
     private var didChangeLimit: PublishSubject = PublishSubject<Void>()
+    @IBAction func onTap(_ sender:Any) {
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        view.sendSubviewToBack(collectionView)
+//        let materialCurve = MDCAnimationTimingFunction.deceleration
+//        let timingFunction = CAMediaTimingFunction.mdc_function(withType: materialCurve)
+//
+//        let animation = CABasicAnimation(keyPath:"transform.translation.x")
+//        animation.timingFunction = timingFunction
+        
+        btuuon.transform = CGAffineTransform(scaleX: 0, y: 0)
+        UIView.animate(withDuration: 10) {
+            self.btuuon.transform = .identity
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

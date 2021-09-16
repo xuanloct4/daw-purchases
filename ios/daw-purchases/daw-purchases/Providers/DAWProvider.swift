@@ -56,6 +56,7 @@ extension DAWProvider : TargetType {
             return .requestPlain
         case .getUsers(let limit):
             let parameters: [String: Any] = ["limit": limit as Any]
+            return .requestCompositeParameters(bodyParameters: [:], bodyEncoding: ParameterEncoding.self as! ParameterEncoding, urlParameters: [:])
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         case .getUsersByUsername( _):
             return .requestPlain

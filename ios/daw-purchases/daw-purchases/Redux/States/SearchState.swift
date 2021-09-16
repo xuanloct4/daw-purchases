@@ -12,7 +12,7 @@ import ReSwift
 import RxSwift
 import Moya
 
-struct SearchState: StateType, Encodable {
+struct SearchState: StateType {
     var username: String?
     var productResults: Result<[Product], APIError>?
     var limit: Int?
