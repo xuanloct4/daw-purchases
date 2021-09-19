@@ -1,13 +1,20 @@
 ${PODS_ROOT}/Target Support Files/Pods-daw-purchases-daw-purchasesUITests/Pods-daw-purchases-daw-purchasesUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/CoreList/CoreList.framework
+${BUILT_PRODUCTS_DIR}/DifferenceKit/DifferenceKit.framework
 ${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
+${BUILT_PRODUCTS_DIR}/JustLog/JustLog.framework
+${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework
 ${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework
 ${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework
+${BUILT_PRODUCTS_DIR}/Material/Material.framework
 ${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework
+${BUILT_PRODUCTS_DIR}/Motion/Motion.framework
 ${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework
 ${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
+${BUILT_PRODUCTS_DIR}/MoyaSugar/MoyaSugar.framework
 ${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework
 ${BUILT_PRODUCTS_DIR}/QueryKit/QueryKit.framework
 ${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework
@@ -24,3 +31,7 @@ ${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework
 ${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework
+${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework
+${BUILT_PRODUCTS_DIR}/SwinjectAutoregistration/SwinjectAutoregistration.framework

@@ -17,3 +17,7 @@ protocol Encodable {
     
     var encoder: Encoder { get }
 }
+
+public protocol JsonSerializable {
+    func toJSON() -> [String: Any]
+}

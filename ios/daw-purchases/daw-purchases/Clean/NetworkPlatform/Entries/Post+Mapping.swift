@@ -11,7 +11,7 @@ import Foundation
 extension Post: Identifiable {}
 
 extension Post {
-    func toJSON() -> [String: Any] {
+    public func toJSON() -> [String: Any] {
         return [
             "body": body,
             "title": title,

@@ -1,6 +1,13 @@
 import Foundation
 
-public struct Post: Codable {
+public struct Post: Codable, JsonSerializable, NetworkRepresentable {
+    func asNetwork() -> NETPost {
+        return encoder
+    }
+    
+    typealias NetworkType = NETPost
+    
+    
     public let body: String
     public let title: String
     public let uid: String

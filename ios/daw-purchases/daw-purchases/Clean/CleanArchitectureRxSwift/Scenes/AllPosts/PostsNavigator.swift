@@ -33,6 +33,8 @@ class DefaultPostsNavigator: PostsNavigator {
         let vc = storyBoard.instantiateViewController(ofType: CreatePostViewController.self)
         vc.viewModel = viewModel
         let nc = UINavigationController(rootViewController: vc)
+        nc.modalTransitionStyle = .coverVertical
+        nc.modalPresentationStyle = .overFullScreen
         navigationController.present(nc, animated: true, completion: nil)
     }
 
